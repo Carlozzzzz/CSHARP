@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36310.24 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Todo List Appppp", "Todo List Appppp.csproj", "{B5F2E5D2-4528-4E55-A166-435BBBD33837}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B5F2E5D2-4528-4E55-A166-435BBBD33837}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5F2E5D2-4528-4E55-A166-435BBBD33837}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5F2E5D2-4528-4E55-A166-435BBBD33837}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5F2E5D2-4528-4E55-A166-435BBBD33837}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EAE79849-069C-480D-8CEB-B7BEC98125DF}
+	EndGlobalSection
+EndGlobal
