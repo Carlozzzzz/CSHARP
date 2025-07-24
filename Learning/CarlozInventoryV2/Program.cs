@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Todo_List_Appppp
+namespace CarlozInventoryV2
 {
     internal static class Program
     {

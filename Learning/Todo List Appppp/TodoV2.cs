@@ -154,32 +154,40 @@ namespace Todo_List_Appppp
 
         private void markNotDoneBtn_Click(object sender, EventArgs e)
         {
-            string prevDate = "";
-            int currentId = (int)completedTodoList.Rows[completedTaskGridView.CurrentCell.RowIndex]["ID"];
-            foreach (TodoItem item in todoList)
+            try
             {
-                if (item.Id == currentId)
+                string prevDate = "";
+                int currentId = (int)completedTodoList.Rows[completedTaskGridView.CurrentCell.RowIndex]["ID"];
+                foreach (TodoItem item in todoList)
                 {
-                    item.IsCompleted = false;
-                    prevDate = item.CreatedAt.ToString("MM/dd/yyyy hh:mm");
-                    break;
+                    if (item.Id == currentId)
+                    {
+                        item.IsCompleted = false;
+                        prevDate = item.CreatedAt.ToString("MM/dd/yyyy hh:mm");
+                        break;
+                    }
                 }
+
+
+                Console.WriteLine("Current ID: " + currentId);
+
+                // Reisert the item back to the currentTodoList
+                DataRow newRow = currentTodoList.NewRow();
+                newRow["ID"] = currentId;
+                newRow["Title"] = completedTodoList.Rows[completedTaskGridView.CurrentCell.RowIndex]["Title"];
+                newRow["Description"] = completedTodoList.Rows[completedTaskGridView.CurrentCell.RowIndex]["Description"];
+                newRow["Date"] = prevDate;
+
+                currentTodoList.Rows.InsertAt(newRow, currentId - 1);
+
+                // remove the undone item
+                completedTodoList.Rows[completedTaskGridView.CurrentCell.RowIndex].Delete();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Mali gar: " + ex);
             }
 
-
-            Console.WriteLine("Current ID: " + currentId);
-
-            // Reisert the item back to the currentTodoList
-            DataRow newRow = currentTodoList.NewRow();
-            newRow["ID"] = currentId;
-            newRow["Title"] = completedTodoList.Rows[completedTaskGridView.CurrentCell.RowIndex]["Title"];
-            newRow["Description"] = completedTodoList.Rows[completedTaskGridView.CurrentCell.RowIndex]["Description"];
-            newRow["Date"] = prevDate;
-
-            currentTodoList.Rows.InsertAt(newRow, currentId - 1);
-
-            // remove the undone item
-            completedTodoList.Rows[completedTaskGridView.CurrentCell.RowIndex].Delete();
         }
 
         void printItems()
