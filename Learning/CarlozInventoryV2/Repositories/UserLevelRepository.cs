@@ -57,5 +57,53 @@ namespace CarlozInventoryV2.Repositories
             return null;
         }
 
+        public UserLevel GetUserLevelByLevel(string level)
+        {
+            UserLevel userLevel = new UserLevel();
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(Database.GetConnectionString()))
+                {
+                    connection.Open();
+                    string query = "SELECT TOP 1 * FROM UserLevelTbl where level = @level ORDER BY id";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@level", level);
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                userLevel.id = reader.GetInt32(0);
+                                userLevel.level = reader.GetString(1);
+                            }
+
+                        }
+                    }
+                }
+                return userLevel;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error getting User Level by level: " + ex);
+            }
+
+            return null;
+
+        }
+
+        public int GetUserLevelId(string level)
+        {
+            var userLevels = GetUserLevels();
+
+            foreach (var userLevel in userLevels)
+            {
+                if (level == userLevel.level)
+                    return (int)userLevel.id;
+            }
+
+            return 0;
+        }
     }
 }

@@ -46,17 +46,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CreateEditUser.cs">
+    <Compile Include="CreateUserForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CreateEditUser.Designer.cs">
-      <DependentUpon>CreateEditUser.cs</DependentUpon>
+    <Compile Include="CreateUserForm.Designer.cs">
+      <DependentUpon>CreateUserForm.cs</DependentUpon>
     </Compile>
     <Compile Include="dashboardform.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="dashboardform.Designer.cs">
       <DependentUpon>dashboardform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditUserForm.Designer.cs">
+      <DependentUpon>EditUserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditUserPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditUserPassword.Designer.cs">
+      <DependentUpon>EditUserPassword.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -101,11 +113,17 @@
     <Compile Include="usermanagementform.Designer.cs">
       <DependentUpon>usermanagementform.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="CreateEditUser.resx">
-      <DependentUpon>CreateEditUser.cs</DependentUpon>
+    <EmbeddedResource Include="CreateUserForm.resx">
+      <DependentUpon>CreateUserForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="dashboardform.resx">
       <DependentUpon>dashboardform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditUserForm.resx">
+      <DependentUpon>EditUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditUserPassword.resx">
+      <DependentUpon>EditUserPassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

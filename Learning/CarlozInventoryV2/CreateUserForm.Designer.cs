@@ -1,6 +1,6 @@
 ﻿namespace CarlozInventoryV2
 {
-    partial class CreateEditUser
+    partial class CreateUserForm
     {
         /// <summary>
         /// Required designer variable.
@@ -32,8 +32,6 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.tbEmail = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
-            this.tbPhone = new System.Windows.Forms.TextBox();
-            this.lblPhone = new System.Windows.Forms.Label();
             this.tbRetypePassword = new System.Windows.Forms.TextBox();
             this.lblRetypePassword = new System.Windows.Forms.Label();
             this.tbPassword = new System.Windows.Forms.TextBox();
@@ -52,7 +50,7 @@
             // btnCancel
             // 
             this.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnCancel.Location = new System.Drawing.Point(269, 346);
+            this.btnCancel.Location = new System.Drawing.Point(269, 286);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(99, 29);
             this.btnCancel.TabIndex = 30;
@@ -62,7 +60,7 @@
             // btnSave
             // 
             this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnSave.Location = new System.Drawing.Point(164, 346);
+            this.btnSave.Location = new System.Drawing.Point(164, 286);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(99, 29);
             this.btnSave.TabIndex = 29;
@@ -75,7 +73,7 @@
             this.tbEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbEmail.Location = new System.Drawing.Point(184, 234);
+            this.tbEmail.Location = new System.Drawing.Point(184, 211);
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.Size = new System.Drawing.Size(266, 20);
             this.tbEmail.TabIndex = 28;
@@ -86,33 +84,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(86, 237);
+            this.lblEmail.Location = new System.Drawing.Point(86, 214);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(35, 13);
             this.lblEmail.TabIndex = 27;
             this.lblEmail.Text = "Email:";
-            // 
-            // tbPhone
-            // 
-            this.tbPhone.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbPhone.Location = new System.Drawing.Point(184, 208);
-            this.tbPhone.Name = "tbPhone";
-            this.tbPhone.Size = new System.Drawing.Size(266, 20);
-            this.tbPhone.TabIndex = 26;
-            // 
-            // lblPhone
-            // 
-            this.lblPhone.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblPhone.AutoSize = true;
-            this.lblPhone.Location = new System.Drawing.Point(86, 211);
-            this.lblPhone.Name = "lblPhone";
-            this.lblPhone.Size = new System.Drawing.Size(41, 13);
-            this.lblPhone.TabIndex = 25;
-            this.lblPhone.Text = "Phone:";
             // 
             // tbRetypePassword
             // 
@@ -219,7 +195,7 @@
             // cbLevel
             // 
             this.cbLevel.FormattingEnabled = true;
-            this.cbLevel.Location = new System.Drawing.Point(164, 270);
+            this.cbLevel.Location = new System.Drawing.Point(164, 247);
             this.cbLevel.Name = "cbLevel";
             this.cbLevel.Size = new System.Drawing.Size(98, 21);
             this.cbLevel.TabIndex = 31;
@@ -230,7 +206,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(122, 273);
+            this.label1.Location = new System.Drawing.Point(122, 250);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(36, 13);
             this.label1.TabIndex = 32;
@@ -242,7 +218,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(277, 273);
+            this.label2.Location = new System.Drawing.Point(277, 250);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(40, 13);
             this.label2.TabIndex = 34;
@@ -254,7 +230,7 @@
             this.cbStatus.Items.AddRange(new object[] {
             "Active",
             "Inactive"});
-            this.cbStatus.Location = new System.Drawing.Point(323, 270);
+            this.cbStatus.Location = new System.Drawing.Point(323, 247);
             this.cbStatus.Name = "cbStatus";
             this.cbStatus.Size = new System.Drawing.Size(98, 21);
             this.cbStatus.TabIndex = 33;
@@ -263,7 +239,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(540, 410);
+            this.ClientSize = new System.Drawing.Size(540, 373);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cbStatus);
             this.Controls.Add(this.label1);
@@ -272,8 +248,6 @@
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.tbEmail);
             this.Controls.Add(this.lblEmail);
-            this.Controls.Add(this.tbPhone);
-            this.Controls.Add(this.lblPhone);
             this.Controls.Add(this.tbRetypePassword);
             this.Controls.Add(this.lblRetypePassword);
             this.Controls.Add(this.tbPassword);
@@ -297,8 +271,6 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.TextBox tbEmail;
         private System.Windows.Forms.Label lblEmail;
-        private System.Windows.Forms.TextBox tbPhone;
-        private System.Windows.Forms.Label lblPhone;
         private System.Windows.Forms.TextBox tbRetypePassword;
         private System.Windows.Forms.Label lblRetypePassword;
         private System.Windows.Forms.TextBox tbPassword;

@@ -12,8 +12,9 @@ namespace CarlozInventoryV2.Models
         public string username = "";
         public string password = "";
         public string email = "";
-        public string userlevel_id = "";
-        public int status;
+        public string level = "";
+        public int userlevel_id;
+        public int is_active;
         public string createdAt = "";
     }
 }
