@@ -81,6 +81,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Database.cs" />
+    <Compile Include="Repositories\UserLevelRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="settingsform.cs">
       <SubType>Form</SubType>
