@@ -207,6 +207,10 @@ namespace CarlozInventoryV2.Repositories
             }
         }
 
+        public void ChangeUserPassword() // to be modified later
+        {
+
+        }
     }
 
     

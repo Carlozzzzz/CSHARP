@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CarlozInventoryV2.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -63,6 +64,19 @@ namespace CarlozInventoryV2
         private void button1_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            Session.ClearSession();
+
+            MessageBox.Show("Logged out successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            this.Hide();
+
+            LoginForm loginForm = new LoginForm();
+            loginForm.FormClosed += (s, args) => this.Close(); // Close login when dashboard closes
+            loginForm.Show();
         }
     }
 }
