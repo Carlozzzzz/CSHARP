@@ -1,4 +1,5 @@
 ﻿using CarlozInventoryV2.Models;
+using CarlozInventoryV2.Repositories;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -68,7 +69,8 @@ namespace CarlozInventoryV2
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            Session.ClearSession();
+            var loginRepo = new LoginRepository();
+            loginRepo.LogoutUser();
 
             MessageBox.Show("Logged out successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

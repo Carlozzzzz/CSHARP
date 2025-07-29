@@ -56,6 +56,7 @@
             this.btnCancel.TabIndex = 30;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
@@ -77,6 +78,7 @@
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.Size = new System.Drawing.Size(266, 20);
             this.tbEmail.TabIndex = 28;
+            this.tbEmail.TextChanged += new System.EventHandler(this.tbEmail_TextChanged);
             // 
             // lblEmail
             // 
@@ -89,6 +91,7 @@
             this.lblEmail.Size = new System.Drawing.Size(35, 13);
             this.lblEmail.TabIndex = 27;
             this.lblEmail.Text = "Email:";
+            this.lblEmail.Click += new System.EventHandler(this.lblEmail_Click);
             // 
             // tbRetypePassword
             // 
@@ -99,6 +102,7 @@
             this.tbRetypePassword.Name = "tbRetypePassword";
             this.tbRetypePassword.Size = new System.Drawing.Size(266, 20);
             this.tbRetypePassword.TabIndex = 24;
+            this.tbRetypePassword.TextChanged += new System.EventHandler(this.tbRetypePassword_TextChanged);
             // 
             // lblRetypePassword
             // 
@@ -111,6 +115,7 @@
             this.lblRetypePassword.Size = new System.Drawing.Size(92, 13);
             this.lblRetypePassword.TabIndex = 23;
             this.lblRetypePassword.Text = "Retype password:";
+            this.lblRetypePassword.Click += new System.EventHandler(this.lblRetypePassword_Click);
             // 
             // tbPassword
             // 
@@ -121,6 +126,7 @@
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.Size = new System.Drawing.Size(266, 20);
             this.tbPassword.TabIndex = 22;
+            this.tbPassword.TextChanged += new System.EventHandler(this.tbPassword_TextChanged);
             // 
             // lblpassword
             // 
@@ -133,6 +139,7 @@
             this.lblpassword.Size = new System.Drawing.Size(56, 13);
             this.lblpassword.TabIndex = 21;
             this.lblpassword.Text = "Password:";
+            this.lblpassword.Click += new System.EventHandler(this.lblpassword_Click);
             // 
             // tbId
             // 
@@ -144,6 +151,7 @@
             this.tbId.ReadOnly = true;
             this.tbId.Size = new System.Drawing.Size(266, 20);
             this.tbId.TabIndex = 20;
+            this.tbId.TextChanged += new System.EventHandler(this.tbId_TextChanged);
             // 
             // tbUsername
             // 
@@ -154,6 +162,7 @@
             this.tbUsername.Name = "tbUsername";
             this.tbUsername.Size = new System.Drawing.Size(266, 20);
             this.tbUsername.TabIndex = 19;
+            this.tbUsername.TextChanged += new System.EventHandler(this.tbUsername_TextChanged);
             // 
             // lblUsername
             // 
@@ -166,6 +175,7 @@
             this.lblUsername.Size = new System.Drawing.Size(58, 13);
             this.lblUsername.TabIndex = 18;
             this.lblUsername.Text = "Username:";
+            this.lblUsername.Click += new System.EventHandler(this.lblUsername_Click);
             // 
             // lbluserId
             // 
@@ -178,6 +188,7 @@
             this.lbluserId.Size = new System.Drawing.Size(46, 13);
             this.lbluserId.TabIndex = 17;
             this.lbluserId.Text = "User ID:";
+            this.lbluserId.Click += new System.EventHandler(this.lbluserId_Click);
             // 
             // lbTitle
             // 
@@ -191,6 +202,7 @@
             this.lbTitle.TabIndex = 16;
             this.lbTitle.Text = "Create User";
             this.lbTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbTitle.Click += new System.EventHandler(this.lbTitle_Click);
             // 
             // cbLevel
             // 
@@ -199,6 +211,7 @@
             this.cbLevel.Name = "cbLevel";
             this.cbLevel.Size = new System.Drawing.Size(98, 21);
             this.cbLevel.TabIndex = 31;
+            this.cbLevel.SelectedIndexChanged += new System.EventHandler(this.cbLevel_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -211,6 +224,7 @@
             this.label1.Size = new System.Drawing.Size(36, 13);
             this.label1.TabIndex = 32;
             this.label1.Text = "Level:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -223,6 +237,7 @@
             this.label2.Size = new System.Drawing.Size(40, 13);
             this.label2.TabIndex = 34;
             this.label2.Text = "Status:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // cbStatus
             // 
@@ -234,8 +249,9 @@
             this.cbStatus.Name = "cbStatus";
             this.cbStatus.Size = new System.Drawing.Size(98, 21);
             this.cbStatus.TabIndex = 33;
+            this.cbStatus.SelectedIndexChanged += new System.EventHandler(this.cbStatus_SelectedIndexChanged);
             // 
-            // CreateEditUser
+            // CreateUserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -257,7 +273,7 @@
             this.Controls.Add(this.lblUsername);
             this.Controls.Add(this.lbluserId);
             this.Controls.Add(this.lbTitle);
-            this.Name = "CreateEditUser";
+            this.Name = "CreateUserForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CreateEditUser";
             this.ResumeLayout(false);

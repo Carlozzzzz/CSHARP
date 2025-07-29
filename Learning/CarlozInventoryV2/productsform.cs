@@ -16,5 +16,10 @@ namespace CarlozInventoryV2
         {
             InitializeComponent();
         }
+
+        private void btnNewProduct_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

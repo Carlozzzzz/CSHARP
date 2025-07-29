@@ -67,11 +67,7 @@ namespace CarlozInventoryV2
                 this.DialogResult = DialogResult.OK;
             }
 
-            
-
         }
-
-       
 
         private bool ValidateForm()
         {
@@ -125,6 +121,86 @@ namespace CarlozInventoryV2
             }
 
             return true; // All fields are valid
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void tbEmail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblEmail_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbRetypePassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblRetypePassword_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblpassword_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbId_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbUsername_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblUsername_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbluserId_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbTitle_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbLevel_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbStatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 

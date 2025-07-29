@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CreateEditSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateEditSupplier.Designer.cs">
+      <DependentUpon>CreateEditSupplier.cs</DependentUpon>
+    </Compile>
     <Compile Include="CreateUserForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,7 +94,9 @@
     <Compile Include="logsform.Designer.cs">
       <DependentUpon>logsform.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Log.cs" />
     <Compile Include="Models\Session.cs" />
+    <Compile Include="Models\Supplier.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\UserLevel.cs" />
     <Compile Include="productsform.cs">
@@ -102,6 +110,8 @@
     <Compile Include="Repositories\Database.cs" />
     <Compile Include="Models\Login.Cs" />
     <Compile Include="Repositories\LoginRepository.cs" />
+    <Compile Include="Repositories\LogsRepository.cs" />
+    <Compile Include="Repositories\SupplierRepository.cs" />
     <Compile Include="Repositories\UserLevelRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="settingsform.cs">
@@ -122,6 +132,9 @@
     <Compile Include="usermanagementform.Designer.cs">
       <DependentUpon>usermanagementform.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CreateEditSupplier.resx">
+      <DependentUpon>CreateEditSupplier.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CreateUserForm.resx">
       <DependentUpon>CreateUserForm.cs</DependentUpon>
     </EmbeddedResource>

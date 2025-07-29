@@ -45,7 +45,6 @@ namespace CarlozInventoryV2
 
                 if (user == null) return;
 
-
                 EditUserForm form = new EditUserForm();
                 form.EditUser(user);
                 DialogResult result = form.ShowDialog();

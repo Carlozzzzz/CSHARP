@@ -8,6 +8,7 @@ namespace CarlozInventoryV2.Models
 {
     public static class Session
     {
+        public static int UserId;
         public static string SessionName;
         public static string Name;
         public static string Username;
@@ -17,6 +18,7 @@ namespace CarlozInventoryV2.Models
         {
             if (user != null)
             {
+                UserId = user.id;
                 SessionName = "CarlozInventoryV2";
                 Username = user.username;
                 Level = user.level;
@@ -29,6 +31,7 @@ namespace CarlozInventoryV2.Models
 
         public static void ClearSession()
         {
+            UserId = 0;
             SessionName = null;
             Username = null;
             Level = null;
