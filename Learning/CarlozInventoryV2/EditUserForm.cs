@@ -65,6 +65,8 @@ namespace CarlozInventoryV2
 
                 userRepository.UpdateUser(user);
 
+                LogRepo.CreateLog("Updated a user");
+
                 MessageBox.Show("User has been updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 this.DialogResult = DialogResult.OK;

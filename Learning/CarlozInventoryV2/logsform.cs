@@ -29,7 +29,7 @@ namespace CarlozInventoryV2
             dataTable.Columns.Add("ACTION");
             dataTable.Columns.Add("MODIFICATION TIME");
 
-            var repo = new LogsRepository();
+            var repo = new LogRepository();
             var logs = repo.GetLogs(); // create this
 
             foreach (var log in logs)

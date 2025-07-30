@@ -34,31 +34,37 @@ namespace CarlozInventoryV2
         }
         private void btndashboard_Click(object sender, EventArgs e)
         {
+            LogRepo.CreateLog("user view dashboard");
             loadform(new dashboardform());
         }
 
         private void btnproducts_Click(object sender, EventArgs e)
         {
+            LogRepo.CreateLog("user view products");
             loadform(new productsform());
         }
 
         private void btnsupplier_Click(object sender, EventArgs e)
         {
+            LogRepo.CreateLog("user view suppliers");
             loadform(new supplierform());
         }
 
         private void btnsettings_Click(object sender, EventArgs e)
         {
+            LogRepo.CreateLog("user view settings");
             loadform(new settingsform());
         }
 
         private void btnusermanagement_Click(object sender, EventArgs e)
         {
+            LogRepo.CreateLog("user view users");
             loadform(new usermanagementform());
         }
 
         private void btnlogs_Click(object sender, EventArgs e)
         {
+            LogRepo.CreateLog("user view logs");
             loadform(new logsform());
         }
 
@@ -71,6 +77,8 @@ namespace CarlozInventoryV2
         {
             var loginRepo = new LoginRepository();
             loginRepo.LogoutUser();
+
+            LogRepo.CreateLog("user logged out");
 
             MessageBox.Show("Logged out successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

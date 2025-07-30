@@ -47,13 +47,6 @@ namespace CarlozInventoryV2.Repositories
 
                                 Session.Setuser(user);
 
-                                // Log the successful login
-                                var log = new Log();
-                                log.UserId = user.id;
-                                log.Action = "user logged in";
-                                var logsRepo = new LogsRepository();
-                                logsRepo.CreateLog(log);
-
                                 return true;
                             }
                         }
@@ -73,12 +66,6 @@ namespace CarlozInventoryV2.Repositories
             // It would typically involve clearing the session or authentication token.
             // For now, we will just print a message to the console.
             Console.WriteLine("User logged out successfully.");
-
-            var log = new Log();
-            log.UserId = Session.UserId;
-            log.Action = "user logged out";
-            var logsRepo = new LogsRepository();
-            logsRepo.CreateLog(log);
 
             Console.WriteLine("Logging out user with ID: " + Session.UserId);
 

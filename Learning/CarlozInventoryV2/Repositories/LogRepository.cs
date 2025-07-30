@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CarlozInventoryV2.Repositories
 {
-    public class LogsRepository
+    public class LogRepository
     {
         public List<Log> GetLogs()
         {

@@ -62,6 +62,8 @@ namespace CarlozInventoryV2
 
                 userRepository.CreateUser(user);
 
+                LogRepo.CreateLog("created an user");
+
                 MessageBox.Show("User has been created successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 this.DialogResult = DialogResult.OK;

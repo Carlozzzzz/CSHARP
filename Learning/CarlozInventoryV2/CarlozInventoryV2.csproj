@@ -110,7 +110,8 @@
     <Compile Include="Repositories\Database.cs" />
     <Compile Include="Models\Login.Cs" />
     <Compile Include="Repositories\LoginRepository.cs" />
-    <Compile Include="Repositories\LogsRepository.cs" />
+    <Compile Include="Repositories\LogRepo.cs" />
+    <Compile Include="Repositories\LogRepository.cs" />
     <Compile Include="Repositories\SupplierRepository.cs" />
     <Compile Include="Repositories\UserLevelRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />

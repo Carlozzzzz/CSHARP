@@ -32,6 +32,8 @@ namespace CarlozInventoryV2
 
                 if (isLoginSuccessful)
                 {
+                    LogRepo.CreateLog("user logged in");
+
                     MessageBox.Show("Logged in successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     // Hide the login form

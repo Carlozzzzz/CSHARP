@@ -52,11 +52,7 @@ namespace CarlozInventoryV2
                         MessageBox.Show("Supplier has been updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
 
-                    var log = new Log();
-                    log.UserId = Session.UserId;
-                    log.Action = logMessage;
-                    var logsRepo = new LogsRepository();
-                    logsRepo.CreateLog(log);
+                    LogRepo.CreateLog(logMessage);
 
                     this.DialogResult = DialogResult.OK;
                 }
