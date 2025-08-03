@@ -35,6 +35,7 @@ namespace CarlozInventoryV2.Repositories
                                 supplier.Phone = reader.GetString(3);
                                 supplier.ModifiedAt = reader.GetDateTime(4);
                                 supplier.CreatedAt = reader.GetDateTime(5);
+                                supplier.IsActive = reader.GetBoolean(6);
 
                                 suppliers.Add(supplier);
                             }

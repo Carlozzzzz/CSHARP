@@ -102,15 +102,21 @@
             this.dtpCreatedAtSupplier.Name = "dtpCreatedAtSupplier";
             this.dtpCreatedAtSupplier.Size = new System.Drawing.Size(194, 20);
             this.dtpCreatedAtSupplier.TabIndex = 3;
+            this.dtpCreatedAtSupplier.Value = new System.DateTime(1990, 1, 1, 0, 0, 0, 0);
+            this.dtpCreatedAtSupplier.ValueChanged += new System.EventHandler(this.dtpCreatedAtSupplier_ValueChanged);
             // 
             // cbStatusSupplier
             // 
             this.cbStatusSupplier.FormattingEnabled = true;
+            this.cbStatusSupplier.Items.AddRange(new object[] {
+            "Active",
+            "Inactive"});
             this.cbStatusSupplier.Location = new System.Drawing.Point(212, 11);
             this.cbStatusSupplier.Name = "cbStatusSupplier";
             this.cbStatusSupplier.Size = new System.Drawing.Size(68, 21);
             this.cbStatusSupplier.TabIndex = 2;
             this.cbStatusSupplier.Text = "Status";
+            this.cbStatusSupplier.SelectedIndexChanged += new System.EventHandler(this.cbStatusSupplier_SelectedIndexChanged);
             // 
             // tbSearchSupplier
             // 
@@ -119,6 +125,9 @@
             this.tbSearchSupplier.Size = new System.Drawing.Size(178, 20);
             this.tbSearchSupplier.TabIndex = 0;
             this.tbSearchSupplier.Text = "Search...";
+            this.tbSearchSupplier.Click += new System.EventHandler(this.tbSearchSupplier_Click);
+            this.tbSearchSupplier.TextChanged += new System.EventHandler(this.tbSearchSupplier_TextChanged);
+            this.tbSearchSupplier.MouseLeave += new System.EventHandler(this.tbSearchSupplier_MouseLeave);
             // 
             // panel2
             // 

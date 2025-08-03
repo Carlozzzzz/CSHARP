@@ -1,4 +1,5 @@
-﻿using CarlozInventoryV2.Repositories;
+﻿using CarlozInventoryV2.Models;
+using CarlozInventoryV2.Repositories;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,37 +14,31 @@ namespace CarlozInventoryV2
 {
     public partial class supplierform : Form
     {
+        private Timer debounceTimer;
+        private bool isInitializing;
+        private bool isStatusSelected = false;
+        private bool isDateSelected = false;
+
         public supplierform()
         {
+            isInitializing = true;
             InitializeComponent();
             ReadSuppliers();
+
+            debounceTimer = new Timer();
+            debounceTimer.Interval = 500;
+            debounceTimer.Tick += DebounceTimer_Tick;
+
+            tbSearchSupplier.TextChanged += tbSearchSupplier_TextChanged;
+            isInitializing = false;
         }
 
         public void ReadSuppliers()
         {
-            DataTable dataTable = new DataTable();
-            dataTable.Columns.Add("Id", typeof(int));
-            dataTable.Columns.Add("Supplier Name", typeof(string));
-            dataTable.Columns.Add("Email", typeof(string));
-            dataTable.Columns.Add("Phone", typeof(string));
-            dataTable.Columns.Add("Update Time", typeof(DateTime));
-            dataTable.Columns.Add("Creation Time", typeof(DateTime));
-
+           
             var repo = new SupplierRepository();
             var suppliers = repo.GetSuppliers();
-
-            foreach (var supplier in suppliers)
-            {
-                DataRow row = dataTable.NewRow();
-                row["Id"] = supplier.Id;
-                row["Supplier Name"] = supplier.SupplierName;
-                row["Email"] = supplier.Email;
-                row["Phone"] = supplier.Phone;
-                row["Update Time"] = supplier.ModifiedAt;
-                row["Creation Time"] = supplier.CreatedAt;
-
-                dataTable.Rows.Add(row);
-            }
+            DataTable dataTable = DisplayList(suppliers);
 
             this.supplierGridView.DataSource = dataTable;
 
@@ -77,13 +72,13 @@ namespace CarlozInventoryV2
             DialogResult result = form.ShowDialog();
             if (result == DialogResult.OK)
             {
-                ReadSuppliers();
+                RefreshSuppliers();
             }
         }
 
         private void btnRefreshSupplier_Click(object sender, EventArgs e)
         {
-            ReadSuppliers();
+            RefreshSuppliers();
         }
 
         private void supplierGridView_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
@@ -112,7 +107,7 @@ namespace CarlozInventoryV2
                 DialogResult result = form.ShowDialog();
                 if (result == DialogResult.OK)
                 {
-                    ReadSuppliers();
+                    RefreshSuppliers();
                 }
             }
             else if (columnName == "Delete")
@@ -130,10 +125,126 @@ namespace CarlozInventoryV2
 
                 repo.DeleteSupplier(supplierId);
 
-                ReadSuppliers();
+                RefreshSuppliers();
+
+                LogRepo.CreateLog("user deleted a supplier : " + supplierId);
 
                 MessageBox.Show("Supplier has been deleted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void tbSearchSupplier_TextChanged(object sender, EventArgs e)
+        {
+            debounceTimer.Stop();
+            debounceTimer.Start();
+        }
+
+        private void cbStatusSupplier_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (isInitializing) return;
+
+            isStatusSelected = true;
+
+            FilterTable();
+        }
+
+        private void dtpCreatedAtSupplier_ValueChanged(object sender, EventArgs e)
+        {
+            if (isInitializing) return;
+
+            isDateSelected = true;
+
+            FilterTable();
+        }
+
+        public void DebounceTimer_Tick(object sender, EventArgs e)
+        {
+            if (isInitializing) return;
+
+            debounceTimer.Stop();
+
+            FilterTable();
+        }
+
+        public DataTable DisplayList(List<Supplier> suppliers)
+        {
+            DataTable dataTable = new DataTable();
+            dataTable.Columns.Add("Id", typeof(int));
+            dataTable.Columns.Add("Supplier Name", typeof(string));
+            dataTable.Columns.Add("Email", typeof(string));
+            dataTable.Columns.Add("Phone", typeof(string));
+            dataTable.Columns.Add("Status", typeof(string));
+            dataTable.Columns.Add("Update Time", typeof(DateTime));
+            dataTable.Columns.Add("Creation Time", typeof(DateTime));
+
+            foreach (var supplier in suppliers)
+            {
+                DataRow row = dataTable.NewRow();
+                row["Id"] = supplier.Id;
+                row["Supplier Name"] = supplier.SupplierName;
+                row["Email"] = supplier.Email;
+                row["Phone"] = supplier.Phone;
+                row["Status"] = supplier.IsActive ? "Active" : "Inactive";
+                row["Update Time"] = supplier.ModifiedAt;
+                row["Creation Time"] = supplier.CreatedAt;
+
+                dataTable.Rows.Add(row);
+            }
+
+            return dataTable;
+        }
+
+        public void FilterTable()
+        {
+            string searchText = tbSearchSupplier.Text.Trim().ToLower();
+            if (tbSearchSupplier.Text.ToLower().Trim() == "search...") searchText = "";
+
+            var repo = new SupplierRepository();
+            var suppliers = repo.GetSuppliers();
+
+            bool status = cbStatusSupplier.SelectedIndex != 0 ? false : true;
+
+            DateTime selectedDate = dtpCreatedAtSupplier.Value.Date;
+
+            var filtered = suppliers.Where(s =>
+                    s.SupplierName.ToLower().Contains(searchText) ||
+                    s.Email.ToLower().Contains(searchText) ||
+                    s.Phone.ToLower().Contains(searchText)
+                );
+
+
+            if (isStatusSelected)
+                filtered = filtered.Where(p => p.IsActive == status);
+
+            if (isDateSelected)
+                filtered = filtered.Where(p => p.CreatedAt >= selectedDate);
+
+            suppliers = filtered.ToList();
+
+            DataTable dataTable = DisplayList(suppliers);
+
+            supplierGridView.DataSource = dataTable;
+            supplierGridView.Columns["Id"].Visible = false;
+        }
+
+        public void RefreshSuppliers()
+        {
+            tbSearchSupplier.Text = "Search...";
+            cbStatusSupplier.Text = "--Status--";
+            isStatusSelected = false;
+            dtpCreatedAtSupplier.Value = new DateTime(1900, 1, 1);
+            isDateSelected = false;
+            ReadSuppliers();
+        }
+
+        private void tbSearchSupplier_Click(object sender, EventArgs e)
+        {
+            if (tbSearchSupplier.Text.ToLower().Trim() == "search...") tbSearchSupplier.Text = "";
+        }
+
+        private void tbSearchSupplier_MouseLeave(object sender, EventArgs e)
+        {
+            if (tbSearchSupplier.Text.ToLower().Trim() == "") tbSearchSupplier.Text = "Search...";
         }
     }
 }

@@ -68,6 +68,7 @@
             this.productsGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.productsGridView.Size = new System.Drawing.Size(750, 477);
             this.productsGridView.TabIndex = 0;
+            this.productsGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.productsGridView_CellContentClick);
             // 
             // panel1
             // 
@@ -106,6 +107,7 @@
             this.btnRefreshProduct.TabIndex = 4;
             this.btnRefreshProduct.Text = "Refresh";
             this.btnRefreshProduct.UseVisualStyleBackColor = false;
+            this.btnRefreshProduct.Click += new System.EventHandler(this.btnRefreshProduct_Click);
             // 
             // btnNewProduct
             // 
@@ -128,15 +130,21 @@
             this.dtpCreatedAt.Name = "dtpCreatedAt";
             this.dtpCreatedAt.Size = new System.Drawing.Size(194, 20);
             this.dtpCreatedAt.TabIndex = 3;
+            this.dtpCreatedAt.Value = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
+            this.dtpCreatedAt.ValueChanged += new System.EventHandler(this.dtpCreatedAt_ValueChanged);
             // 
             // cbStatus
             // 
             this.cbStatus.FormattingEnabled = true;
+            this.cbStatus.Items.AddRange(new object[] {
+            "Active",
+            "Inactive"});
             this.cbStatus.Location = new System.Drawing.Point(300, 11);
             this.cbStatus.Name = "cbStatus";
             this.cbStatus.Size = new System.Drawing.Size(68, 21);
             this.cbStatus.TabIndex = 2;
-            this.cbStatus.Text = "Status";
+            this.cbStatus.Text = "--Status--";
+            this.cbStatus.SelectedIndexChanged += new System.EventHandler(this.cbStatus_SelectedIndexChanged);
             // 
             // cbSupplier
             // 
@@ -145,7 +153,8 @@
             this.cbSupplier.Name = "cbSupplier";
             this.cbSupplier.Size = new System.Drawing.Size(74, 21);
             this.cbSupplier.TabIndex = 1;
-            this.cbSupplier.Text = "Role";
+            this.cbSupplier.Text = "Supplier";
+            this.cbSupplier.SelectedIndexChanged += new System.EventHandler(this.cbSupplier_SelectedIndexChanged);
             // 
             // tbSearchProduct
             // 
@@ -154,6 +163,9 @@
             this.tbSearchProduct.Size = new System.Drawing.Size(178, 20);
             this.tbSearchProduct.TabIndex = 0;
             this.tbSearchProduct.Text = "Search...";
+            this.tbSearchProduct.Click += new System.EventHandler(this.tbSearchProduct_Click);
+            this.tbSearchProduct.TextChanged += new System.EventHandler(this.tbSearchProduct_TextChanged);
+            this.tbSearchProduct.Leave += new System.EventHandler(this.tbSearchProduct_Leave);
             // 
             // panel2
             // 
