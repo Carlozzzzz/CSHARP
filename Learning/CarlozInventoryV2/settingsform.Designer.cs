@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panelDarkMode = new System.Windows.Forms.Panel();
+            this.panelTheme = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.ckbClassicMode = new System.Windows.Forms.CheckBox();
             this.panelClassicMode = new System.Windows.Forms.Panel();
             this.lblClassicMode = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.ckbDarkMode = new System.Windows.Forms.CheckBox();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.panelDarkMode = new System.Windows.Forms.Panel();
             this.lblDarkMode = new System.Windows.Forms.Label();
             this.panelLightMode = new System.Windows.Forms.Panel();
             this.lblLightMode = new System.Windows.Forms.Label();
@@ -43,29 +43,29 @@
             this.ckbLightMode = new System.Windows.Forms.CheckBox();
             this.panelHeader = new System.Windows.Forms.Panel();
             this.lblHeader = new System.Windows.Forms.Label();
-            this.panelDarkMode.SuspendLayout();
+            this.panelTheme.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panelClassicMode.SuspendLayout();
             this.panel6.SuspendLayout();
-            this.panel4.SuspendLayout();
+            this.panelDarkMode.SuspendLayout();
             this.panelLightMode.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panelHeader.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panelDarkMode
+            // panelTheme
             // 
-            this.panelDarkMode.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panelDarkMode.Controls.Add(this.panel7);
-            this.panelDarkMode.Controls.Add(this.panelClassicMode);
-            this.panelDarkMode.Controls.Add(this.panel6);
-            this.panelDarkMode.Controls.Add(this.panel4);
-            this.panelDarkMode.Controls.Add(this.panelLightMode);
-            this.panelDarkMode.Controls.Add(this.panelHeader);
-            this.panelDarkMode.Location = new System.Drawing.Point(12, 12);
-            this.panelDarkMode.Name = "panelDarkMode";
-            this.panelDarkMode.Size = new System.Drawing.Size(776, 546);
-            this.panelDarkMode.TabIndex = 0;
+            this.panelTheme.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panelTheme.Controls.Add(this.panel7);
+            this.panelTheme.Controls.Add(this.panelClassicMode);
+            this.panelTheme.Controls.Add(this.panel6);
+            this.panelTheme.Controls.Add(this.panelDarkMode);
+            this.panelTheme.Controls.Add(this.panelLightMode);
+            this.panelTheme.Controls.Add(this.panelHeader);
+            this.panelTheme.Location = new System.Drawing.Point(12, 12);
+            this.panelTheme.Name = "panelTheme";
+            this.panelTheme.Size = new System.Drawing.Size(776, 546);
+            this.panelTheme.TabIndex = 0;
             // 
             // panel7
             // 
@@ -133,17 +133,17 @@
             this.ckbDarkMode.Text = "Dark Mode";
             this.ckbDarkMode.UseVisualStyleBackColor = true;
             // 
-            // panel4
+            // panelDarkMode
             // 
-            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.panelDarkMode.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panel4.Controls.Add(this.lblDarkMode);
-            this.panel4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel4.Location = new System.Drawing.Point(285, 117);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(203, 235);
-            this.panel4.TabIndex = 2;
+            this.panelDarkMode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panelDarkMode.Controls.Add(this.lblDarkMode);
+            this.panelDarkMode.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panelDarkMode.Location = new System.Drawing.Point(285, 117);
+            this.panelDarkMode.Name = "panelDarkMode";
+            this.panelDarkMode.Size = new System.Drawing.Size(203, 235);
+            this.panelDarkMode.TabIndex = 2;
             // 
             // lblDarkMode
             // 
@@ -231,17 +231,17 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 570);
-            this.Controls.Add(this.panelDarkMode);
+            this.Controls.Add(this.panelTheme);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "settingsform";
             this.Text = "settingsform";
-            this.panelDarkMode.ResumeLayout(false);
+            this.panelTheme.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.panelClassicMode.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            this.panel4.ResumeLayout(false);
+            this.panelDarkMode.ResumeLayout(false);
             this.panelLightMode.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
@@ -253,7 +253,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panelDarkMode;
+        private System.Windows.Forms.Panel panelTheme;
         private System.Windows.Forms.Panel panelHeader;
         private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.Panel panelLightMode;
@@ -261,7 +261,7 @@
         private System.Windows.Forms.CheckBox ckbLightMode;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.CheckBox ckbDarkMode;
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panelDarkMode;
         private System.Windows.Forms.Label lblDarkMode;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel7;
