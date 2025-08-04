@@ -1,6 +1,6 @@
 ﻿namespace CarlozInventoryV2
 {
-    partial class EditUserPassword
+    partial class EditUserPasswordForm
     {
         /// <summary>
         /// Required designer variable.
@@ -63,6 +63,7 @@
             this.btnCancel.TabIndex = 63;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
@@ -164,7 +165,7 @@
             this.lbluserId.TabIndex = 52;
             this.lbluserId.Text = "User ID:";
             // 
-            // EditUserPassword
+            // EditUserPasswordForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -180,7 +181,8 @@
             this.Controls.Add(this.lblUsername);
             this.Controls.Add(this.lbluserId);
             this.Controls.Add(this.lbTitle);
-            this.Name = "EditUserPassword";
+            this.Name = "EditUserPasswordForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditUserPassword";
             this.ResumeLayout(false);
             this.PerformLayout();

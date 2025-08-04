@@ -76,11 +76,11 @@
     <Compile Include="EditUserForm.Designer.cs">
       <DependentUpon>EditUserForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditUserPassword.cs">
+    <Compile Include="EditUserPasswordForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditUserPassword.Designer.cs">
-      <DependentUpon>EditUserPassword.cs</DependentUpon>
+    <Compile Include="EditUserPasswordForm.Designer.cs">
+      <DependentUpon>EditUserPasswordForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -157,8 +157,8 @@
     <EmbeddedResource Include="EditUserForm.resx">
       <DependentUpon>EditUserForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditUserPassword.resx">
-      <DependentUpon>EditUserPassword.cs</DependentUpon>
+    <EmbeddedResource Include="EditUserPasswordForm.resx">
+      <DependentUpon>EditUserPasswordForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

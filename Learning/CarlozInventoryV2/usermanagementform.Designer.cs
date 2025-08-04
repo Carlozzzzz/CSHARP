@@ -30,7 +30,7 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.btnNewUser = new System.Windows.Forms.Button();
             this.dtpCreatedAt = new System.Windows.Forms.DateTimePicker();
             this.cbStatus = new System.Windows.Forms.ComboBox();
@@ -57,7 +57,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panel3.Controls.Add(this.button1);
+            this.panel3.Controls.Add(this.btnRefresh);
             this.panel3.Controls.Add(this.btnNewUser);
             this.panel3.Controls.Add(this.dtpCreatedAt);
             this.panel3.Controls.Add(this.cbStatus);
@@ -68,19 +68,20 @@
             this.panel3.Size = new System.Drawing.Size(776, 47);
             this.panel3.TabIndex = 0;
             // 
-            // button1
+            // btnRefresh
             // 
-            this.button1.BackColor = System.Drawing.Color.LawnGreen;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.Location = new System.Drawing.Point(604, 5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(77, 33);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Refresh";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnRefresh.BackColor = System.Drawing.Color.LawnGreen;
+            this.btnRefresh.FlatAppearance.BorderSize = 0;
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnRefresh.Location = new System.Drawing.Point(604, 5);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(77, 33);
+            this.btnRefresh.TabIndex = 4;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // btnNewUser
             // 
@@ -103,15 +104,20 @@
             this.dtpCreatedAt.Name = "dtpCreatedAt";
             this.dtpCreatedAt.Size = new System.Drawing.Size(194, 20);
             this.dtpCreatedAt.TabIndex = 3;
+            this.dtpCreatedAt.ValueChanged += new System.EventHandler(this.dtpCreatedAt_ValueChanged);
             // 
             // cbStatus
             // 
             this.cbStatus.FormattingEnabled = true;
+            this.cbStatus.Items.AddRange(new object[] {
+            "Active",
+            "Inactive"});
             this.cbStatus.Location = new System.Drawing.Point(300, 11);
             this.cbStatus.Name = "cbStatus";
             this.cbStatus.Size = new System.Drawing.Size(68, 21);
             this.cbStatus.TabIndex = 2;
-            this.cbStatus.Text = "Status";
+            this.cbStatus.Text = "--Status--";
+            this.cbStatus.SelectedIndexChanged += new System.EventHandler(this.cbStatus_SelectedIndexChanged);
             // 
             // cbRoles
             // 
@@ -120,7 +126,8 @@
             this.cbRoles.Name = "cbRoles";
             this.cbRoles.Size = new System.Drawing.Size(74, 21);
             this.cbRoles.TabIndex = 1;
-            this.cbRoles.Text = "Role";
+            this.cbRoles.Text = "--Roles--";
+            this.cbRoles.SelectedIndexChanged += new System.EventHandler(this.cbRoles_SelectedIndexChanged);
             // 
             // tbSearch
             // 
@@ -129,6 +136,9 @@
             this.tbSearch.Size = new System.Drawing.Size(178, 20);
             this.tbSearch.TabIndex = 0;
             this.tbSearch.Text = "Search...";
+            this.tbSearch.Click += new System.EventHandler(this.tbSearch_Click);
+            this.tbSearch.TextChanged += new System.EventHandler(this.tbSearch_TextChanged);
+            this.tbSearch.Leave += new System.EventHandler(this.tbSearch_Leave);
             // 
             // panel2
             // 
@@ -183,6 +193,6 @@
         private System.Windows.Forms.ComboBox cbRoles;
         private System.Windows.Forms.TextBox tbSearch;
         private System.Windows.Forms.DataGridView usersGridView;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }
