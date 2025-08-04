@@ -79,7 +79,7 @@ namespace CarlozInventoryV2
         private void btnAutoFill_Click(object sender, EventArgs e)
         {
             this.tbUsername.Text = "admin2";
-            this.tbPassword.Text = "password123";
+            this.tbPassword.Text = "s";
         }
     }
 }

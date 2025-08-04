@@ -12,6 +12,7 @@ namespace CarlozInventoryV2.Models
         public int UserId;
         public string Username;
         public string Level;
+        public int UserLevelId;
         public string Action;
         public DateTime ModificationTime;
     }

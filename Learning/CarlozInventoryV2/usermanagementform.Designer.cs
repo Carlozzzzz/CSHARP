@@ -104,6 +104,7 @@
             this.dtpCreatedAt.Name = "dtpCreatedAt";
             this.dtpCreatedAt.Size = new System.Drawing.Size(194, 20);
             this.dtpCreatedAt.TabIndex = 3;
+            this.dtpCreatedAt.Value = new System.DateTime(1990, 1, 1, 0, 0, 0, 0);
             this.dtpCreatedAt.ValueChanged += new System.EventHandler(this.dtpCreatedAt_ValueChanged);
             // 
             // cbStatus

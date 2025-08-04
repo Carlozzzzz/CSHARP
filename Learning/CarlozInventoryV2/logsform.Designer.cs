@@ -31,8 +31,7 @@
             this.panelHeaderLog = new System.Windows.Forms.Panel();
             this.btnRefreshLog = new System.Windows.Forms.Button();
             this.dtpCreatedAtLog = new System.Windows.Forms.DateTimePicker();
-            this.cbStatusLog = new System.Windows.Forms.ComboBox();
-            this.cbRolesLog = new System.Windows.Forms.ComboBox();
+            this.cbRoles = new System.Windows.Forms.ComboBox();
             this.tbSearchLog = new System.Windows.Forms.TextBox();
             this.logGridView = new System.Windows.Forms.DataGridView();
             this.panelHeaderLog.SuspendLayout();
@@ -44,8 +43,7 @@
             this.panelHeaderLog.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panelHeaderLog.Controls.Add(this.btnRefreshLog);
             this.panelHeaderLog.Controls.Add(this.dtpCreatedAtLog);
-            this.panelHeaderLog.Controls.Add(this.cbStatusLog);
-            this.panelHeaderLog.Controls.Add(this.cbRolesLog);
+            this.panelHeaderLog.Controls.Add(this.cbRoles);
             this.panelHeaderLog.Controls.Add(this.tbSearchLog);
             this.panelHeaderLog.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHeaderLog.Location = new System.Drawing.Point(0, 0);
@@ -66,31 +64,26 @@
             this.btnRefreshLog.TabIndex = 4;
             this.btnRefreshLog.Text = "Refresh";
             this.btnRefreshLog.UseVisualStyleBackColor = false;
+            this.btnRefreshLog.Click += new System.EventHandler(this.btnRefreshLog_Click);
             // 
             // dtpCreatedAtLog
             // 
-            this.dtpCreatedAtLog.Location = new System.Drawing.Point(374, 12);
+            this.dtpCreatedAtLog.Location = new System.Drawing.Point(300, 12);
             this.dtpCreatedAtLog.Name = "dtpCreatedAtLog";
             this.dtpCreatedAtLog.Size = new System.Drawing.Size(194, 20);
             this.dtpCreatedAtLog.TabIndex = 3;
+            this.dtpCreatedAtLog.Value = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
+            this.dtpCreatedAtLog.ValueChanged += new System.EventHandler(this.dtpCreatedAtLog_ValueChanged);
             // 
-            // cbStatusLog
+            // cbRoles
             // 
-            this.cbStatusLog.FormattingEnabled = true;
-            this.cbStatusLog.Location = new System.Drawing.Point(300, 11);
-            this.cbStatusLog.Name = "cbStatusLog";
-            this.cbStatusLog.Size = new System.Drawing.Size(68, 21);
-            this.cbStatusLog.TabIndex = 2;
-            this.cbStatusLog.Text = "Status";
-            // 
-            // cbRolesLog
-            // 
-            this.cbRolesLog.FormattingEnabled = true;
-            this.cbRolesLog.Location = new System.Drawing.Point(220, 11);
-            this.cbRolesLog.Name = "cbRolesLog";
-            this.cbRolesLog.Size = new System.Drawing.Size(74, 21);
-            this.cbRolesLog.TabIndex = 1;
-            this.cbRolesLog.Text = "Role";
+            this.cbRoles.FormattingEnabled = true;
+            this.cbRoles.Location = new System.Drawing.Point(220, 11);
+            this.cbRoles.Name = "cbRoles";
+            this.cbRoles.Size = new System.Drawing.Size(74, 21);
+            this.cbRoles.TabIndex = 1;
+            this.cbRoles.Text = "Role";
+            this.cbRoles.SelectedIndexChanged += new System.EventHandler(this.cbRoles_SelectedIndexChanged);
             // 
             // tbSearchLog
             // 
@@ -99,6 +92,9 @@
             this.tbSearchLog.Size = new System.Drawing.Size(178, 20);
             this.tbSearchLog.TabIndex = 0;
             this.tbSearchLog.Text = "Search...";
+            this.tbSearchLog.Click += new System.EventHandler(this.tbSearchLog_Click);
+            this.tbSearchLog.TextChanged += new System.EventHandler(this.tbSearchLog_TextChanged);
+            this.tbSearchLog.Leave += new System.EventHandler(this.tbSearchLog_Leave);
             // 
             // logGridView
             // 
@@ -111,14 +107,14 @@
             this.logGridView.ReadOnly = true;
             this.logGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.logGridView.ShowEditingIcon = false;
-            this.logGridView.Size = new System.Drawing.Size(774, 370);
+            this.logGridView.Size = new System.Drawing.Size(774, 497);
             this.logGridView.TabIndex = 2;
             // 
             // logsform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 570);
             this.Controls.Add(this.logGridView);
             this.Controls.Add(this.panelHeaderLog);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -136,8 +132,7 @@
         private System.Windows.Forms.Panel panelHeaderLog;
         private System.Windows.Forms.Button btnRefreshLog;
         private System.Windows.Forms.DateTimePicker dtpCreatedAtLog;
-        private System.Windows.Forms.ComboBox cbStatusLog;
-        private System.Windows.Forms.ComboBox cbRolesLog;
+        private System.Windows.Forms.ComboBox cbRoles;
         private System.Windows.Forms.TextBox tbSearchLog;
         private System.Windows.Forms.DataGridView logGridView;
     }

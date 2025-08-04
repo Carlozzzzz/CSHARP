@@ -24,6 +24,7 @@ namespace CarlozInventoryV2.Repositories
                                 l.id AS Id, 
                                 u.username AS Username, 
                                 ul.level AS Level, 
+                                u.userlevel_id AS UserLevelId, 
                                 l.action AS Action, 
                                 l.created_at AS ModificationTime
                             FROM LogsTbl l  
@@ -41,6 +42,7 @@ namespace CarlozInventoryV2.Repositories
                                 log.Id = Convert.ToInt32(reader["Id"]);
                                 log.Username = reader["Username"].ToString();
                                 log.Level = reader["Level"].ToString();
+                                log.UserLevelId = Convert.ToInt32(reader["UserLevelId"]);
                                 log.Action = reader["Action"].ToString();
                                 log.ModificationTime = Convert.ToDateTime(reader["ModificationTime"]);
 

@@ -248,8 +248,6 @@ namespace CarlozInventoryV2
 
             int status = cbStatus.SelectedIndex;
 
-            Console.WriteLine("status: " + status);
-
             DateTime selectedDate = dtpCreatedAt.Value.Date;
 
             var filtered = users.Where(p =>
