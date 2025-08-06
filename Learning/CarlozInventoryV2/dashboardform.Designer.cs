@@ -1,6 +1,6 @@
 ﻿namespace CarlozInventoryV2
 {
-    partial class dashboardform
+    partial class panelBody
     {
         /// <summary>
         /// Required designer variable.
@@ -31,9 +31,9 @@
             this.panelHeader = new System.Windows.Forms.Panel();
             this.lblAdmin = new System.Windows.Forms.Label();
             this.panelProducts = new System.Windows.Forms.Panel();
+            this.lblProductsCount = new System.Windows.Forms.Label();
             this.panelLblProducts = new System.Windows.Forms.Panel();
             this.lblPruducts = new System.Windows.Forms.Label();
-            this.lblProductsCount = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblSupplier = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -83,6 +83,18 @@
             this.panelProducts.Size = new System.Drawing.Size(203, 175);
             this.panelProducts.TabIndex = 1;
             // 
+            // lblProductsCount
+            // 
+            this.lblProductsCount.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblProductsCount.Font = new System.Drawing.Font("Microsoft YaHei", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProductsCount.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblProductsCount.Location = new System.Drawing.Point(0, 0);
+            this.lblProductsCount.Name = "lblProductsCount";
+            this.lblProductsCount.Size = new System.Drawing.Size(201, 173);
+            this.lblProductsCount.TabIndex = 5;
+            this.lblProductsCount.Text = "0";
+            this.lblProductsCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // panelLblProducts
             // 
             this.panelLblProducts.BackColor = System.Drawing.Color.White;
@@ -103,18 +115,6 @@
             this.lblPruducts.TabIndex = 0;
             this.lblPruducts.Text = "Products";
             this.lblPruducts.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblProductsCount
-            // 
-            this.lblProductsCount.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblProductsCount.Font = new System.Drawing.Font("Microsoft YaHei", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProductsCount.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblProductsCount.Location = new System.Drawing.Point(0, 0);
-            this.lblProductsCount.Name = "lblProductsCount";
-            this.lblProductsCount.Size = new System.Drawing.Size(201, 173);
-            this.lblProductsCount.TabIndex = 5;
-            this.lblProductsCount.Text = "0";
-            this.lblProductsCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel2
             // 
@@ -210,7 +210,7 @@
             this.panelOtherDesc.Size = new System.Drawing.Size(738, 230);
             this.panelOtherDesc.TabIndex = 8;
             // 
-            // dashboardform
+            // panelBody
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -224,7 +224,7 @@
             this.Controls.Add(this.panelProducts);
             this.Controls.Add(this.panelHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "dashboardform";
+            this.Name = "panelBody";
             this.Text = "dashboardform";
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();

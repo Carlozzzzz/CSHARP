@@ -12,11 +12,11 @@ using System.Windows.Forms;
 
 namespace CarlozInventoryV2
 {
-    public partial class settingsform : Form
+    public partial class supplierform : Form
     {
 
         Themes selectedTheme = Themes.None;
-        public settingsform()
+        public supplierform()
         {
             InitializeComponent();
             AttachClickEvent(panelLightMode, panelLightMode_Click);
@@ -115,7 +115,7 @@ namespace CarlozInventoryV2
         {
             // Apply to the form itself
             panelHeader.BackColor = ThemeColors.GetPanelHeaderColor(theme);
-            panelTheme.BackColor = ThemeColors.GetPanelBodyCOlor(theme);
+            panelThemeBody.BackColor = ThemeColors.GetPanelBodyCOlor(theme);
             this.ForeColor = ThemeColors.GetForeColor(theme, this.BackColor);
 
             // Recursively apply to all controls

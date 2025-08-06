@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace CarlozInventoryV2
 {
-    public partial class dashboardform : Form
+    public partial class panelBody : Form
     {
-        public dashboardform()
+        public panelBody()
         {
             InitializeComponent();
             PopulateCounts();
