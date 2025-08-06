@@ -34,8 +34,10 @@
             this.cbRoles = new System.Windows.Forms.ComboBox();
             this.tbSearchLog = new System.Windows.Forms.TextBox();
             this.logGridView = new System.Windows.Forms.DataGridView();
+            this.panelBody = new System.Windows.Forms.Panel();
             this.panelHeaderLog.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logGridView)).BeginInit();
+            this.panelBody.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelHeaderLog
@@ -45,10 +47,9 @@
             this.panelHeaderLog.Controls.Add(this.dtpCreatedAtLog);
             this.panelHeaderLog.Controls.Add(this.cbRoles);
             this.panelHeaderLog.Controls.Add(this.tbSearchLog);
-            this.panelHeaderLog.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelHeaderLog.Location = new System.Drawing.Point(0, 0);
+            this.panelHeaderLog.Location = new System.Drawing.Point(0, 1);
             this.panelHeaderLog.Name = "panelHeaderLog";
-            this.panelHeaderLog.Size = new System.Drawing.Size(800, 47);
+            this.panelHeaderLog.Size = new System.Drawing.Size(776, 47);
             this.panelHeaderLog.TabIndex = 1;
             // 
             // btnRefreshLog
@@ -58,7 +59,7 @@
             this.btnRefreshLog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRefreshLog.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRefreshLog.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnRefreshLog.Location = new System.Drawing.Point(711, 8);
+            this.btnRefreshLog.Location = new System.Drawing.Point(685, 8);
             this.btnRefreshLog.Name = "btnRefreshLog";
             this.btnRefreshLog.Size = new System.Drawing.Size(77, 33);
             this.btnRefreshLog.TabIndex = 4;
@@ -101,28 +102,39 @@
             this.logGridView.AllowUserToAddRows = false;
             this.logGridView.AllowUserToDeleteRows = false;
             this.logGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.logGridView.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.logGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.logGridView.Location = new System.Drawing.Point(13, 61);
+            this.logGridView.Location = new System.Drawing.Point(13, 57);
             this.logGridView.Name = "logGridView";
             this.logGridView.ReadOnly = true;
             this.logGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.logGridView.ShowEditingIcon = false;
-            this.logGridView.Size = new System.Drawing.Size(774, 497);
+            this.logGridView.Size = new System.Drawing.Size(750, 477);
             this.logGridView.TabIndex = 2;
+            // 
+            // panelBody
+            // 
+            this.panelBody.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.panelBody.Controls.Add(this.logGridView);
+            this.panelBody.Controls.Add(this.panelHeaderLog);
+            this.panelBody.Location = new System.Drawing.Point(12, 12);
+            this.panelBody.Name = "panelBody";
+            this.panelBody.Size = new System.Drawing.Size(776, 546);
+            this.panelBody.TabIndex = 3;
             // 
             // logsform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 570);
-            this.Controls.Add(this.logGridView);
-            this.Controls.Add(this.panelHeaderLog);
+            this.Controls.Add(this.panelBody);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "logsform";
             this.Text = "logsform";
             this.panelHeaderLog.ResumeLayout(false);
             this.panelHeaderLog.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logGridView)).EndInit();
+            this.panelBody.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -135,5 +147,6 @@
         private System.Windows.Forms.ComboBox cbRoles;
         private System.Windows.Forms.TextBox tbSearchLog;
         private System.Windows.Forms.DataGridView logGridView;
+        private System.Windows.Forms.Panel panelBody;
     }
 }

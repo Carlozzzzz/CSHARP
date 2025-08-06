@@ -15,7 +15,7 @@ namespace CarlozInventoryV2.Models
             }
         }
 
-        public static Color GetPanelBodyCOlor(Themes theme)
+        public static Color GetPanelBodyColor(Themes theme)
         {
             switch (theme)
             {

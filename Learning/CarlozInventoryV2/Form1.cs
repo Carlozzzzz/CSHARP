@@ -17,6 +17,7 @@ namespace CarlozInventoryV2
         public Form1()
         {
             InitializeComponent();
+            loadform(new dashboardform());
         }
 
         public void loadform(object Form)
@@ -29,8 +30,14 @@ namespace CarlozInventoryV2
             f.Dock = DockStyle.Fill;
             this.mainpanel.Controls.Add(f);
             this.mainpanel.Tag = f;
-            f.Show();
 
+            int userId = Session.UserId;
+
+            var repo = new ThemeRepository();
+            var theme = repo.GetTheme(userId);
+            repo.ApplyThemeToControls(this.mainpanel.Controls, theme.SelectionTheme);
+
+            f.Show();
         }
         private void btndashboard_Click(object sender, EventArgs e)
         {

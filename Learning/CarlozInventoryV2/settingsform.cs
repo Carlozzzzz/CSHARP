@@ -22,16 +22,6 @@ namespace CarlozInventoryV2
             AttachClickEvent(panelLightMode, panelLightMode_Click);
             AttachClickEvent(panelDarkMode, panelDarkMode_Click);
             AttachClickEvent(panelClassicMode, panelClassicMode_Click);
-            SetTheme();
-        }
-
-        public void SetTheme()
-        {
-            int userId = Session.UserId;
-
-            var repo = new ThemeRepository();
-            var theme = repo.GetTheme(userId);
-            ApplyTheme(theme.SelectionTheme);
         }
 
         // Recursively attach the click event to the panel and all its children
@@ -81,9 +71,6 @@ namespace CarlozInventoryV2
             string message = "";
             int userId = Session.UserId;
 
-            var repo = new ThemeRepository();
-            var theme = repo.GetTheme(userId);
-
             Theme currTheme = new Theme();
             currTheme.UserId = userId;
             currTheme.SelectionTheme = selectedTheme;
@@ -94,6 +81,8 @@ namespace CarlozInventoryV2
                 return;
             }
 
+            var repo = new ThemeRepository();
+            var theme = repo.GetTheme(userId);
             if (theme != null)
             {
                 repo.UpdateTheme(currTheme);
@@ -105,54 +94,10 @@ namespace CarlozInventoryV2
                 message = "Theme succesfully created.";
             }
 
-            ApplyTheme(selectedTheme);
-
+            repo.ApplyThemeToControls(this.Controls, currTheme.SelectionTheme);
 
             MessageBox.Show(message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void ApplyTheme(Themes theme)
-        {
-            // Apply to the form itself
-            panelHeader.BackColor = ThemeColors.GetPanelHeaderColor(theme);
-            panelTheme.BackColor = ThemeColors.GetPanelBodyCOlor(theme);
-            this.ForeColor = ThemeColors.GetForeColor(theme, this.BackColor);
-
-            // Recursively apply to all controls
-            //ApplyThemeToControls(this.Controls, theme);
-        }
-
-        private void ApplyThemeToControls(Control.ControlCollection controls, Themes theme)
-        {
-            foreach (Control ctrl in controls)
-            {
-                if (ctrl is Panel)
-                {
-                    if (ctrl.Name.IndexOf("Header", StringComparison.OrdinalIgnoreCase) >= 0)
-                    {
-                        ctrl.BackColor = ThemeColors.GetPanelHeaderColor(theme);
-                    }
-                    else if (ctrl.Name.IndexOf("Body", StringComparison.OrdinalIgnoreCase) >= 0)
-                    {
-                        ctrl.BackColor = ThemeColors.GetPanelBodyCOlor(theme);
-                    }
-                    ctrl.ForeColor = ThemeColors.GetForeColor(theme, ctrl.BackColor);
-                }
-                else if (ctrl is Button)
-                {
-                    ctrl.BackColor = ThemeColors.GetButtonBackColor(theme);
-                    ctrl.ForeColor = ThemeColors.GetForeColor(theme, ctrl.BackColor);
-                }
-                else
-                {
-                    // For other controls, you can set only the font color if you wish
-                    ctrl.ForeColor = ThemeColors.GetForeColor(theme, this.BackColor);
-                }
-
-                // Recursively apply to child controls
-                if (ctrl.HasChildren)
-                    ApplyThemeToControls(ctrl.Controls, theme);
-            }
-        }
     }
 }

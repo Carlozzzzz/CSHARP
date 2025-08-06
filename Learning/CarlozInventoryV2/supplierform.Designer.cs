@@ -29,42 +29,42 @@
         private void InitializeComponent()
         {
             this.panel1Supplier = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.panelHeader = new System.Windows.Forms.Panel();
             this.btnRefreshSupplier = new System.Windows.Forms.Button();
             this.btnNewSupplier = new System.Windows.Forms.Button();
             this.dtpCreatedAtSupplier = new System.Windows.Forms.DateTimePicker();
             this.cbStatusSupplier = new System.Windows.Forms.ComboBox();
             this.tbSearchSupplier = new System.Windows.Forms.TextBox();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panelBody = new System.Windows.Forms.Panel();
             this.supplierGridView = new System.Windows.Forms.DataGridView();
             this.panel1Supplier.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.panelHeader.SuspendLayout();
+            this.panelBody.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.supplierGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1Supplier
             // 
-            this.panel1Supplier.Controls.Add(this.panel3);
-            this.panel1Supplier.Controls.Add(this.panel2);
+            this.panel1Supplier.Controls.Add(this.panelHeader);
+            this.panel1Supplier.Controls.Add(this.panelBody);
             this.panel1Supplier.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1Supplier.Location = new System.Drawing.Point(0, 0);
             this.panel1Supplier.Name = "panel1Supplier";
             this.panel1Supplier.Size = new System.Drawing.Size(800, 570);
             this.panel1Supplier.TabIndex = 1;
             // 
-            // panel3
+            // panelHeader
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panel3.Controls.Add(this.btnRefreshSupplier);
-            this.panel3.Controls.Add(this.btnNewSupplier);
-            this.panel3.Controls.Add(this.dtpCreatedAtSupplier);
-            this.panel3.Controls.Add(this.cbStatusSupplier);
-            this.panel3.Controls.Add(this.tbSearchSupplier);
-            this.panel3.Location = new System.Drawing.Point(12, 12);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(776, 47);
-            this.panel3.TabIndex = 0;
+            this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panelHeader.Controls.Add(this.btnRefreshSupplier);
+            this.panelHeader.Controls.Add(this.btnNewSupplier);
+            this.panelHeader.Controls.Add(this.dtpCreatedAtSupplier);
+            this.panelHeader.Controls.Add(this.cbStatusSupplier);
+            this.panelHeader.Controls.Add(this.tbSearchSupplier);
+            this.panelHeader.Location = new System.Drawing.Point(12, 12);
+            this.panelHeader.Name = "panelHeader";
+            this.panelHeader.Size = new System.Drawing.Size(776, 47);
+            this.panelHeader.TabIndex = 0;
             // 
             // btnRefreshSupplier
             // 
@@ -129,14 +129,14 @@
             this.tbSearchSupplier.TextChanged += new System.EventHandler(this.tbSearchSupplier_TextChanged);
             this.tbSearchSupplier.MouseLeave += new System.EventHandler(this.tbSearchSupplier_MouseLeave);
             // 
-            // panel2
+            // panelBody
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.panel2.Controls.Add(this.supplierGridView);
-            this.panel2.Location = new System.Drawing.Point(12, 12);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(776, 546);
-            this.panel2.TabIndex = 0;
+            this.panelBody.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.panelBody.Controls.Add(this.supplierGridView);
+            this.panelBody.Location = new System.Drawing.Point(12, 12);
+            this.panelBody.Name = "panelBody";
+            this.panelBody.Size = new System.Drawing.Size(776, 546);
+            this.panelBody.TabIndex = 0;
             // 
             // supplierGridView
             // 
@@ -164,9 +164,9 @@
             this.Name = "supplierform";
             this.Text = "supplierform";
             this.panel1Supplier.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel2.ResumeLayout(false);
+            this.panelHeader.ResumeLayout(false);
+            this.panelHeader.PerformLayout();
+            this.panelBody.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.supplierGridView)).EndInit();
             this.ResumeLayout(false);
 
@@ -175,13 +175,13 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1Supplier;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panelHeader;
         private System.Windows.Forms.Button btnRefreshSupplier;
         private System.Windows.Forms.Button btnNewSupplier;
         private System.Windows.Forms.DateTimePicker dtpCreatedAtSupplier;
         private System.Windows.Forms.ComboBox cbStatusSupplier;
         private System.Windows.Forms.TextBox tbSearchSupplier;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panelBody;
         private System.Windows.Forms.DataGridView supplierGridView;
     }
 }

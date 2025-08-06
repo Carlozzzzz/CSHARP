@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panelTheme = new System.Windows.Forms.Panel();
+            this.panelThemeBody = new System.Windows.Forms.Panel();
+            this.btnSave = new System.Windows.Forms.Button();
             this.panelHeaderClassicMode = new System.Windows.Forms.Panel();
             this.ckbClassicMode = new System.Windows.Forms.CheckBox();
             this.panelClassicMode = new System.Windows.Forms.Panel();
@@ -43,8 +44,7 @@
             this.ckbLightMode = new System.Windows.Forms.CheckBox();
             this.panelHeader = new System.Windows.Forms.Panel();
             this.lblHeader = new System.Windows.Forms.Label();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.panelTheme.SuspendLayout();
+            this.panelThemeBody.SuspendLayout();
             this.panelHeaderClassicMode.SuspendLayout();
             this.panelClassicMode.SuspendLayout();
             this.panelHeaderDarkMode.SuspendLayout();
@@ -54,20 +54,35 @@
             this.panelHeader.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panelTheme
+            // panelThemeBody
             // 
-            this.panelTheme.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panelTheme.Controls.Add(this.btnSave);
-            this.panelTheme.Controls.Add(this.panelHeaderClassicMode);
-            this.panelTheme.Controls.Add(this.panelClassicMode);
-            this.panelTheme.Controls.Add(this.panelHeaderDarkMode);
-            this.panelTheme.Controls.Add(this.panelDarkMode);
-            this.panelTheme.Controls.Add(this.panelLightMode);
-            this.panelTheme.Controls.Add(this.panelHeader);
-            this.panelTheme.Location = new System.Drawing.Point(12, 12);
-            this.panelTheme.Name = "panelTheme";
-            this.panelTheme.Size = new System.Drawing.Size(776, 546);
-            this.panelTheme.TabIndex = 0;
+            this.panelThemeBody.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panelThemeBody.Controls.Add(this.btnSave);
+            this.panelThemeBody.Controls.Add(this.panelHeaderClassicMode);
+            this.panelThemeBody.Controls.Add(this.panelClassicMode);
+            this.panelThemeBody.Controls.Add(this.panelHeaderDarkMode);
+            this.panelThemeBody.Controls.Add(this.panelDarkMode);
+            this.panelThemeBody.Controls.Add(this.panelLightMode);
+            this.panelThemeBody.Controls.Add(this.panelHeader);
+            this.panelThemeBody.Location = new System.Drawing.Point(12, 12);
+            this.panelThemeBody.Name = "panelThemeBody";
+            this.panelThemeBody.Size = new System.Drawing.Size(776, 546);
+            this.panelThemeBody.TabIndex = 0;
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnSave.FlatAppearance.BorderSize = 0;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnSave.Location = new System.Drawing.Point(669, 53);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(79, 36);
+            this.btnSave.TabIndex = 6;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // panelHeaderClassicMode
             // 
@@ -231,31 +246,16 @@
             this.lblHeader.TabIndex = 1;
             this.lblHeader.Text = "Theme Settings";
             // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnSave.FlatAppearance.BorderSize = 0;
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnSave.Location = new System.Drawing.Point(669, 53);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(79, 36);
-            this.btnSave.TabIndex = 6;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
             // settingsform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 570);
-            this.Controls.Add(this.panelTheme);
+            this.Controls.Add(this.panelThemeBody);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "settingsform";
             this.Text = "settingsform";
-            this.panelTheme.ResumeLayout(false);
+            this.panelThemeBody.ResumeLayout(false);
             this.panelHeaderClassicMode.ResumeLayout(false);
             this.panelHeaderClassicMode.PerformLayout();
             this.panelClassicMode.ResumeLayout(false);
@@ -273,7 +273,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panelTheme;
+        private System.Windows.Forms.Panel panelThemeBody;
         private System.Windows.Forms.Panel panelHeader;
         private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.Panel panelLightMode;

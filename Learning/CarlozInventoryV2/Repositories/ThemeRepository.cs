@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace CarlozInventoryV2.Repositories
 {
@@ -95,6 +96,49 @@ namespace CarlozInventoryV2.Repositories
             catch (Exception ex)
             {
                 Console.WriteLine("Failed to update theme: " + ex.Message);
+            }
+        }
+
+        private void ApplyTheme(Themes theme)
+        {
+            // Recursively apply to all controls
+            //ApplyThemeToControls(this.Controls, theme);
+        }
+
+        public void ApplyThemeToControls(Control.ControlCollection controls, Themes theme)
+        {
+            foreach (Control ctrl in controls)
+            {
+                if (ctrl is Panel)
+                {
+                    if (ctrl.Name.IndexOf("Header", StringComparison.OrdinalIgnoreCase) >= 0 && ctrl.Name.IndexOf("Mode", StringComparison.OrdinalIgnoreCase) < 0)
+                    {
+                        ctrl.BackColor = ThemeColors.GetPanelHeaderColor(theme);
+                        Console.WriteLine("Header Detected");
+
+                    }
+                    else if (ctrl.Name.IndexOf("Body", StringComparison.OrdinalIgnoreCase) >= 0)
+                    {
+                        ctrl.BackColor = ThemeColors.GetPanelBodyColor(theme);
+                        Console.WriteLine("Body Detected : " + ctrl.Name);
+                    }
+                    ctrl.ForeColor = ThemeColors.GetForeColor(theme, ctrl.BackColor);
+                    Console.WriteLine("Inside Panel : " + ctrl.Name);
+                }
+                //else if (ctrl is Button)
+                //{
+                //    ctrl.BackColor = ThemeColors.GetButtonBackColor(theme);
+                //    ctrl.ForeColor = ThemeColors.GetForeColor(theme, ctrl.BackColor);
+                //}
+                //else
+                //{
+                //    // For other controls, you can set only the font color if you wish
+                //    ctrl.ForeColor = ThemeColors.GetForeColor(theme, this.BackColor);
+                //}
+
+                //// Recursively apply to child controls
+                if (ctrl.HasChildren)
+                    ApplyThemeToControls(ctrl.Controls, theme);
             }
         }
     }
