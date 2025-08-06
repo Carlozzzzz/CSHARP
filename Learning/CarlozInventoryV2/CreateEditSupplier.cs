@@ -72,7 +72,7 @@ namespace CarlozInventoryV2
         {
             id = supplier.Id;
             this.Text = "Edit Supplier";
-            this.lbTitle.Text = "Edit Supplier";
+            this.lbHeaderTitle.Text = "Edit Supplier";
             this.tbSupplierName.Text = supplier.SupplierName;
             this.tbSupplierEmail.Text = supplier.Email;
             this.tbSupplierMobile.Text = supplier.Phone;

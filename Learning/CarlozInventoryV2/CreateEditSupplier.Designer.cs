@@ -40,7 +40,7 @@
             this.tbSupplierName = new System.Windows.Forms.TextBox();
             this.lblSupplier = new System.Windows.Forms.Label();
             this.lblSupplierId = new System.Windows.Forms.Label();
-            this.lbTitle = new System.Windows.Forms.Label();
+            this.lbHeaderTitle = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblStatus
@@ -176,18 +176,18 @@
             this.lblSupplierId.TabIndex = 36;
             this.lblSupplierId.Text = "Supplier ID:";
             // 
-            // lbTitle
+            // lbHeaderTitle
             // 
-            this.lbTitle.BackColor = System.Drawing.Color.DimGray;
-            this.lbTitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lbTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTitle.ForeColor = System.Drawing.Color.White;
-            this.lbTitle.Location = new System.Drawing.Point(0, 0);
-            this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(540, 46);
-            this.lbTitle.TabIndex = 35;
-            this.lbTitle.Text = "Create Supplier";
-            this.lbTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbHeaderTitle.BackColor = System.Drawing.Color.DimGray;
+            this.lbHeaderTitle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lbHeaderTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHeaderTitle.ForeColor = System.Drawing.Color.White;
+            this.lbHeaderTitle.Location = new System.Drawing.Point(0, 0);
+            this.lbHeaderTitle.Name = "lbHeaderTitle";
+            this.lbHeaderTitle.Size = new System.Drawing.Size(540, 46);
+            this.lbHeaderTitle.TabIndex = 35;
+            this.lbHeaderTitle.Text = "Create Supplier";
+            this.lbHeaderTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // CreateEditSupplier
             // 
@@ -206,7 +206,7 @@
             this.Controls.Add(this.tbSupplierName);
             this.Controls.Add(this.lblSupplier);
             this.Controls.Add(this.lblSupplierId);
-            this.Controls.Add(this.lbTitle);
+            this.Controls.Add(this.lbHeaderTitle);
             this.Name = "CreateEditSupplier";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CreateEditSupplier";
@@ -229,6 +229,6 @@
         private System.Windows.Forms.TextBox tbSupplierName;
         private System.Windows.Forms.Label lblSupplier;
         private System.Windows.Forms.Label lblSupplierId;
-        private System.Windows.Forms.Label lbTitle;
+        private System.Windows.Forms.Label lbHeaderTitle;
     }
 }

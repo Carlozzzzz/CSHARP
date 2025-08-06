@@ -38,7 +38,7 @@
             this.tbProduct = new System.Windows.Forms.TextBox();
             this.lblProduct = new System.Windows.Forms.Label();
             this.lblProductId = new System.Windows.Forms.Label();
-            this.lbTitle = new System.Windows.Forms.Label();
+            this.lbHeaderTitle = new System.Windows.Forms.Label();
             this.lblSupplier = new System.Windows.Forms.Label();
             this.cbSupplier = new System.Windows.Forms.ComboBox();
             this.cbStatus = new System.Windows.Forms.ComboBox();
@@ -156,18 +156,18 @@
             this.lblProductId.TabIndex = 53;
             this.lblProductId.Text = "Product ID:";
             // 
-            // lbTitle
+            // lbHeaderTitle
             // 
-            this.lbTitle.BackColor = System.Drawing.Color.DimGray;
-            this.lbTitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lbTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTitle.ForeColor = System.Drawing.Color.White;
-            this.lbTitle.Location = new System.Drawing.Point(0, 0);
-            this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(540, 46);
-            this.lbTitle.TabIndex = 52;
-            this.lbTitle.Text = "Create Product";
-            this.lbTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbHeaderTitle.BackColor = System.Drawing.Color.DimGray;
+            this.lbHeaderTitle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lbHeaderTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHeaderTitle.ForeColor = System.Drawing.Color.White;
+            this.lbHeaderTitle.Location = new System.Drawing.Point(0, 0);
+            this.lbHeaderTitle.Name = "lbHeaderTitle";
+            this.lbHeaderTitle.Size = new System.Drawing.Size(540, 46);
+            this.lbHeaderTitle.TabIndex = 52;
+            this.lbHeaderTitle.Text = "Create Product";
+            this.lbHeaderTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblSupplier
             // 
@@ -231,7 +231,7 @@
             this.Controls.Add(this.tbProduct);
             this.Controls.Add(this.lblProduct);
             this.Controls.Add(this.lblProductId);
-            this.Controls.Add(this.lbTitle);
+            this.Controls.Add(this.lbHeaderTitle);
             this.Name = "CreateEditProduct";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CreateEditProduct";
@@ -251,7 +251,7 @@
         private System.Windows.Forms.TextBox tbProduct;
         private System.Windows.Forms.Label lblProduct;
         private System.Windows.Forms.Label lblProductId;
-        private System.Windows.Forms.Label lbTitle;
+        private System.Windows.Forms.Label lbHeaderTitle;
         private System.Windows.Forms.Label lblSupplier;
         private System.Windows.Forms.ComboBox cbSupplier;
         private System.Windows.Forms.ComboBox cbStatus;

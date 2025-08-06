@@ -105,6 +105,8 @@
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Session.cs" />
     <Compile Include="Models\Supplier.cs" />
+    <Compile Include="Models\Theme.cs" />
+    <Compile Include="Models\ThemeColors.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\UserLevel.cs" />
     <Compile Include="productsform.cs">
@@ -122,6 +124,7 @@
     <Compile Include="Repositories\LogRepository.cs" />
     <Compile Include="Repositories\ProductRepository.cs" />
     <Compile Include="Repositories\SupplierRepository.cs" />
+    <Compile Include="Repositories\ThemeRepository.cs" />
     <Compile Include="Repositories\UserLevelRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="settingsform.cs">

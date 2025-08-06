@@ -29,36 +29,38 @@
         private void InitializeComponent()
         {
             this.panelTheme = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
+            this.panelHeaderClassicMode = new System.Windows.Forms.Panel();
             this.ckbClassicMode = new System.Windows.Forms.CheckBox();
             this.panelClassicMode = new System.Windows.Forms.Panel();
             this.lblClassicMode = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
+            this.panelHeaderDarkMode = new System.Windows.Forms.Panel();
             this.ckbDarkMode = new System.Windows.Forms.CheckBox();
             this.panelDarkMode = new System.Windows.Forms.Panel();
             this.lblDarkMode = new System.Windows.Forms.Label();
             this.panelLightMode = new System.Windows.Forms.Panel();
             this.lblLightMode = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.panelHeaderLightMode = new System.Windows.Forms.Panel();
             this.ckbLightMode = new System.Windows.Forms.CheckBox();
             this.panelHeader = new System.Windows.Forms.Panel();
             this.lblHeader = new System.Windows.Forms.Label();
+            this.btnSave = new System.Windows.Forms.Button();
             this.panelTheme.SuspendLayout();
-            this.panel7.SuspendLayout();
+            this.panelHeaderClassicMode.SuspendLayout();
             this.panelClassicMode.SuspendLayout();
-            this.panel6.SuspendLayout();
+            this.panelHeaderDarkMode.SuspendLayout();
             this.panelDarkMode.SuspendLayout();
             this.panelLightMode.SuspendLayout();
-            this.panel5.SuspendLayout();
+            this.panelHeaderLightMode.SuspendLayout();
             this.panelHeader.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelTheme
             // 
             this.panelTheme.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panelTheme.Controls.Add(this.panel7);
+            this.panelTheme.Controls.Add(this.btnSave);
+            this.panelTheme.Controls.Add(this.panelHeaderClassicMode);
             this.panelTheme.Controls.Add(this.panelClassicMode);
-            this.panelTheme.Controls.Add(this.panel6);
+            this.panelTheme.Controls.Add(this.panelHeaderDarkMode);
             this.panelTheme.Controls.Add(this.panelDarkMode);
             this.panelTheme.Controls.Add(this.panelLightMode);
             this.panelTheme.Controls.Add(this.panelHeader);
@@ -67,15 +69,15 @@
             this.panelTheme.Size = new System.Drawing.Size(776, 546);
             this.panelTheme.TabIndex = 0;
             // 
-            // panel7
+            // panelHeaderClassicMode
             // 
-            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panel7.Controls.Add(this.ckbClassicMode);
-            this.panel7.ForeColor = System.Drawing.Color.Transparent;
-            this.panel7.Location = new System.Drawing.Point(505, 117);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(203, 35);
-            this.panel7.TabIndex = 5;
+            this.panelHeaderClassicMode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panelHeaderClassicMode.Controls.Add(this.ckbClassicMode);
+            this.panelHeaderClassicMode.ForeColor = System.Drawing.Color.Transparent;
+            this.panelHeaderClassicMode.Location = new System.Drawing.Point(505, 117);
+            this.panelHeaderClassicMode.Name = "panelHeaderClassicMode";
+            this.panelHeaderClassicMode.Size = new System.Drawing.Size(203, 35);
+            this.panelHeaderClassicMode.TabIndex = 5;
             // 
             // ckbClassicMode
             // 
@@ -99,6 +101,7 @@
             this.panelClassicMode.Name = "panelClassicMode";
             this.panelClassicMode.Size = new System.Drawing.Size(203, 235);
             this.panelClassicMode.TabIndex = 4;
+            this.panelClassicMode.Click += new System.EventHandler(this.panelClassicMode_Click);
             // 
             // lblClassicMode
             // 
@@ -113,15 +116,15 @@
             this.lblClassicMode.Text = "Classic Mode";
             this.lblClassicMode.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel6
+            // panelHeaderDarkMode
             // 
-            this.panel6.BackColor = System.Drawing.Color.Black;
-            this.panel6.Controls.Add(this.ckbDarkMode);
-            this.panel6.ForeColor = System.Drawing.Color.Transparent;
-            this.panel6.Location = new System.Drawing.Point(285, 117);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(203, 35);
-            this.panel6.TabIndex = 3;
+            this.panelHeaderDarkMode.BackColor = System.Drawing.Color.Black;
+            this.panelHeaderDarkMode.Controls.Add(this.ckbDarkMode);
+            this.panelHeaderDarkMode.ForeColor = System.Drawing.Color.Transparent;
+            this.panelHeaderDarkMode.Location = new System.Drawing.Point(285, 117);
+            this.panelHeaderDarkMode.Name = "panelHeaderDarkMode";
+            this.panelHeaderDarkMode.Size = new System.Drawing.Size(203, 35);
+            this.panelHeaderDarkMode.TabIndex = 3;
             // 
             // ckbDarkMode
             // 
@@ -144,6 +147,7 @@
             this.panelDarkMode.Name = "panelDarkMode";
             this.panelDarkMode.Size = new System.Drawing.Size(203, 235);
             this.panelDarkMode.TabIndex = 2;
+            this.panelDarkMode.Click += new System.EventHandler(this.panelDarkMode_Click);
             // 
             // lblDarkMode
             // 
@@ -165,12 +169,13 @@
             this.panelLightMode.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panelLightMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelLightMode.Controls.Add(this.lblLightMode);
-            this.panelLightMode.Controls.Add(this.panel5);
+            this.panelLightMode.Controls.Add(this.panelHeaderLightMode);
             this.panelLightMode.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panelLightMode.Location = new System.Drawing.Point(62, 117);
             this.panelLightMode.Name = "panelLightMode";
             this.panelLightMode.Size = new System.Drawing.Size(203, 235);
             this.panelLightMode.TabIndex = 1;
+            this.panelLightMode.Click += new System.EventHandler(this.panelLightMode_Click);
             // 
             // lblLightMode
             // 
@@ -185,14 +190,14 @@
             this.lblLightMode.Text = "Light Mode";
             this.lblLightMode.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel5
+            // panelHeaderLightMode
             // 
-            this.panel5.BackColor = System.Drawing.Color.DarkGray;
-            this.panel5.Controls.Add(this.ckbLightMode);
-            this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(203, 35);
-            this.panel5.TabIndex = 2;
+            this.panelHeaderLightMode.BackColor = System.Drawing.Color.DarkGray;
+            this.panelHeaderLightMode.Controls.Add(this.ckbLightMode);
+            this.panelHeaderLightMode.Location = new System.Drawing.Point(0, 0);
+            this.panelHeaderLightMode.Name = "panelHeaderLightMode";
+            this.panelHeaderLightMode.Size = new System.Drawing.Size(203, 35);
+            this.panelHeaderLightMode.TabIndex = 2;
             // 
             // ckbLightMode
             // 
@@ -226,6 +231,21 @@
             this.lblHeader.TabIndex = 1;
             this.lblHeader.Text = "Theme Settings";
             // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnSave.FlatAppearance.BorderSize = 0;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnSave.Location = new System.Drawing.Point(669, 53);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(79, 36);
+            this.btnSave.TabIndex = 6;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
             // settingsform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -236,15 +256,15 @@
             this.Name = "settingsform";
             this.Text = "settingsform";
             this.panelTheme.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
+            this.panelHeaderClassicMode.ResumeLayout(false);
+            this.panelHeaderClassicMode.PerformLayout();
             this.panelClassicMode.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
+            this.panelHeaderDarkMode.ResumeLayout(false);
+            this.panelHeaderDarkMode.PerformLayout();
             this.panelDarkMode.ResumeLayout(false);
             this.panelLightMode.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
+            this.panelHeaderLightMode.ResumeLayout(false);
+            this.panelHeaderLightMode.PerformLayout();
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
             this.ResumeLayout(false);
@@ -259,14 +279,15 @@
         private System.Windows.Forms.Panel panelLightMode;
         private System.Windows.Forms.Label lblLightMode;
         private System.Windows.Forms.CheckBox ckbLightMode;
-        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panelHeaderDarkMode;
         private System.Windows.Forms.CheckBox ckbDarkMode;
         private System.Windows.Forms.Panel panelDarkMode;
         private System.Windows.Forms.Label lblDarkMode;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panelHeaderLightMode;
+        private System.Windows.Forms.Panel panelHeaderClassicMode;
         private System.Windows.Forms.CheckBox ckbClassicMode;
         private System.Windows.Forms.Panel panelClassicMode;
         private System.Windows.Forms.Label lblClassicMode;
+        private System.Windows.Forms.Button btnSave;
     }
 }
