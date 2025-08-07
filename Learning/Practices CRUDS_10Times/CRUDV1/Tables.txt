@@ -1,0 +1,15 @@
+﻿Create Table Users_Tbl (
+	id Integer PRIMARY KEY AUTO INCREMENT,
+	username VARCHAR(100) NOT NULL,
+	password VARCHAR(100) NOT NULL,
+	email VARCHAR(100) NOT NULL,
+	user_level int NOT NUlL,
+);
+
+Create Table Products_Tbl (
+	id INT IDENTITY(1,1) PRIMARY KEY,
+	user_id INT,
+	product varchar(100),
+
+	CONSTRAINT FK_Products_Users FOREIGN KEY (user_id) REFERENCES Users_Tbl(id)
+);

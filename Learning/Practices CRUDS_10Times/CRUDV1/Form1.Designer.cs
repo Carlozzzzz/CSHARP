@@ -35,19 +35,19 @@
             this.tpUsers = new System.Windows.Forms.TabPage();
             this.userGridView = new System.Windows.Forms.DataGridView();
             this.tpProducts = new System.Windows.Forms.TabPage();
-            this.productGridView = new System.Windows.Forms.DataGridView();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.lblSearch = new System.Windows.Forms.Label();
             this.tbSearch = new System.Windows.Forms.TextBox();
             this.btnNew = new System.Windows.Forms.Button();
+            this.productGridView = new System.Windows.Forms.DataGridView();
             this.panelHeader.SuspendLayout();
             this.panelBody.SuspendLayout();
             this.tcDataDisplay.SuspendLayout();
             this.tpUsers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userGridView)).BeginInit();
             this.tpProducts.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.productGridView)).BeginInit();
             this.panelMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.productGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // panelHeader
@@ -109,11 +109,18 @@
             // 
             // userGridView
             // 
+            this.userGridView.AllowUserToAddRows = false;
+            this.userGridView.AllowUserToDeleteRows = false;
+            this.userGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.userGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.userGridView.Location = new System.Drawing.Point(13, 13);
             this.userGridView.Name = "userGridView";
+            this.userGridView.ReadOnly = true;
+            this.userGridView.RowHeadersVisible = false;
+            this.userGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.userGridView.Size = new System.Drawing.Size(776, 360);
             this.userGridView.TabIndex = 0;
+            this.userGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.userGridView_CellContentClick);
             // 
             // tpProducts
             // 
@@ -125,14 +132,6 @@
             this.tpProducts.TabIndex = 1;
             this.tpProducts.Text = "Products";
             this.tpProducts.UseVisualStyleBackColor = true;
-            // 
-            // productGridView
-            // 
-            this.productGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.productGridView.Location = new System.Drawing.Point(13, 13);
-            this.productGridView.Name = "productGridView";
-            this.productGridView.Size = new System.Drawing.Size(776, 360);
-            this.productGridView.TabIndex = 1;
             // 
             // panelMenu
             // 
@@ -172,6 +171,22 @@
             this.btnNew.TabIndex = 0;
             this.btnNew.Text = "New";
             this.btnNew.UseVisualStyleBackColor = true;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
+            // 
+            // productGridView
+            // 
+            this.productGridView.AllowUserToAddRows = false;
+            this.productGridView.AllowUserToDeleteRows = false;
+            this.productGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.productGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.productGridView.Location = new System.Drawing.Point(13, 13);
+            this.productGridView.Name = "productGridView";
+            this.productGridView.ReadOnly = true;
+            this.productGridView.RowHeadersVisible = false;
+            this.productGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.productGridView.Size = new System.Drawing.Size(776, 360);
+            this.productGridView.TabIndex = 1;
+            this.productGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.productGridView_CellContentClick);
             // 
             // Form1
             // 
@@ -189,9 +204,9 @@
             this.tpUsers.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.userGridView)).EndInit();
             this.tpProducts.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.productGridView)).EndInit();
             this.panelMenu.ResumeLayout(false);
             this.panelMenu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.productGridView)).EndInit();
             this.ResumeLayout(false);
 
         }

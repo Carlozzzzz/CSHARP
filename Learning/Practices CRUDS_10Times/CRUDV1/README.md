@@ -1,17 +1,24 @@
-# CRUDV1 User Management App
+# CRUDV1 User & Product Management App
 
 ## Overview
 
-This is a basic CRUD (Create, Read, Update, Delete) application for managing user records. The app is built with Windows Forms using .NET Framework 4.7.2. It connects to a database named `CRUDV1` to store and manage user information.
+This is a basic CRUD (Create, Read, Update, Delete) application for managing user and product records. The app is built with Windows Forms using .NET Framework 4.7.2. It connects to a database named `CRUDV1` to store and manage user and product information.
 
 > **Note:** This project is for learning purposes only.
 
 ## Features
 
-- **Create**: Add new user records to the database.
-- **Read**: View existing user records.
-- **Update**: Edit and update user details.
-- **Delete**: Remove user records from the database.
+- **User Management**
+  - **Create**: Add new user records to the database.
+  - **Read**: View existing user records.
+  - **Update**: Edit and update user details.
+  - **Delete**: Remove user records from the database.
+
+- **Product Management**
+  - **Create**: Add new product records to the database.
+  - **Read**: View existing product records.
+  - **Update**: Edit and update product details.
+  - **Delete**: Remove product records from the database.
 
 ## Technologies Used
 
@@ -30,13 +37,27 @@ This is a basic CRUD (Create, Read, Update, Delete) application for managing use
 ## Usage
 
 - Launch the app from Visual Studio or the executable.
-- Use the provided interface to add, view, update, or delete user records.
+- Use the provided interface to add, view, update, or delete user and product records.
 - All changes are reflected in the `CRUDV1` database.
 
-## Database
+## Database Roadmap
 
-- The app expects a SQL Server database named `CRUDV1`.
-- Ensure the required tables for user management exist (e.g., `Users` table with appropriate columns).
+1. **Design Tables**
+   - Create a `Users` table for storing user information (e.g., UserID, Name, Email, etc.).
+   - Create a `Products` table for storing product information (e.g., ProductID, Name, Description, Price, etc.).
+
+2. **Establish Relationships**
+   - If products are associated with users (e.g., each product has an owner), add a foreign key in the `Products` table referencing the `Users` table.
+
+3. **Implement CRUD Operations**
+   - Use SQL queries or an ORM to perform Create, Read, Update, and Delete operations for both tables.
+
+4. **Integrate with Application**
+   - Connect the WinForms UI to the database using ADO.NET or Entity Framework.
+   - Ensure forms for both users and products interact with the correct tables.
+
+5. **Testing**
+   - Test all CRUD operations for both users and products to ensure data integrity and correct functionality.
 
 ## License
 

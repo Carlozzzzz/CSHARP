@@ -31,16 +31,16 @@
             this.panelHeader = new System.Windows.Forms.Panel();
             this.lblCreateEditUser = new System.Windows.Forms.Label();
             this.panelBody = new System.Windows.Forms.Panel();
-            this.lblUsername = new System.Windows.Forms.Label();
-            this.tbUsername = new System.Windows.Forms.TextBox();
-            this.tbPassword = new System.Windows.Forms.TextBox();
-            this.lblPassword = new System.Windows.Forms.Label();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.cbUserLevel = new System.Windows.Forms.ComboBox();
+            this.lblUserLevel = new System.Windows.Forms.Label();
             this.tbEmail = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
-            this.lblUserLevel = new System.Windows.Forms.Label();
-            this.cbUserLevel = new System.Windows.Forms.ComboBox();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
+            this.tbPassword = new System.Windows.Forms.TextBox();
+            this.lblPassword = new System.Windows.Forms.Label();
+            this.tbUsername = new System.Windows.Forms.TextBox();
+            this.lblUsername = new System.Windows.Forms.Label();
             this.panelHeader.SuspendLayout();
             this.panelBody.SuspendLayout();
             this.SuspendLayout();
@@ -87,24 +87,72 @@
             this.panelBody.Size = new System.Drawing.Size(434, 239);
             this.panelBody.TabIndex = 1;
             // 
-            // lblUsername
+            // btnCancel
             // 
-            this.lblUsername.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.lblUsername.AutoSize = true;
-            this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername.Location = new System.Drawing.Point(59, 43);
-            this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(71, 15);
-            this.lblUsername.TabIndex = 0;
-            this.lblUsername.Text = "Username: ";
+            this.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(221, 166);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(106, 34);
+            this.btnCancel.TabIndex = 10;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
             // 
-            // tbUsername
+            // btnSave
             // 
-            this.tbUsername.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.tbUsername.Location = new System.Drawing.Point(159, 42);
-            this.tbUsername.Name = "tbUsername";
-            this.tbUsername.Size = new System.Drawing.Size(215, 20);
-            this.tbUsername.TabIndex = 1;
+            this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnSave.BackColor = System.Drawing.Color.Blue;
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.Location = new System.Drawing.Point(109, 166);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(106, 34);
+            this.btnSave.TabIndex = 9;
+            this.btnSave.Text = "Create";
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // cbUserLevel
+            // 
+            this.cbUserLevel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.cbUserLevel.FormattingEnabled = true;
+            this.cbUserLevel.Items.AddRange(new object[] {
+            "Admin",
+            "User"});
+            this.cbUserLevel.Location = new System.Drawing.Point(159, 121);
+            this.cbUserLevel.Name = "cbUserLevel";
+            this.cbUserLevel.Size = new System.Drawing.Size(215, 21);
+            this.cbUserLevel.TabIndex = 8;
+            // 
+            // lblUserLevel
+            // 
+            this.lblUserLevel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.lblUserLevel.AutoSize = true;
+            this.lblUserLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserLevel.Location = new System.Drawing.Point(59, 122);
+            this.lblUserLevel.Name = "lblUserLevel";
+            this.lblUserLevel.Size = new System.Drawing.Size(68, 15);
+            this.lblUserLevel.TabIndex = 6;
+            this.lblUserLevel.Text = "User Level:";
+            // 
+            // tbEmail
+            // 
+            this.tbEmail.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.tbEmail.Location = new System.Drawing.Point(159, 94);
+            this.tbEmail.Name = "tbEmail";
+            this.tbEmail.Size = new System.Drawing.Size(215, 20);
+            this.tbEmail.TabIndex = 5;
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.Location = new System.Drawing.Point(59, 95);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(42, 15);
+            this.lblEmail.TabIndex = 4;
+            this.lblEmail.Text = "Email:";
             // 
             // tbPassword
             // 
@@ -126,68 +174,24 @@
             this.lblPassword.TabIndex = 2;
             this.lblPassword.Text = "Password:";
             // 
-            // tbEmail
+            // tbUsername
             // 
-            this.tbEmail.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.tbEmail.Location = new System.Drawing.Point(159, 94);
-            this.tbEmail.Name = "tbEmail";
-            this.tbEmail.Size = new System.Drawing.Size(215, 20);
-            this.tbEmail.TabIndex = 5;
+            this.tbUsername.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.tbUsername.Location = new System.Drawing.Point(159, 42);
+            this.tbUsername.Name = "tbUsername";
+            this.tbUsername.Size = new System.Drawing.Size(215, 20);
+            this.tbUsername.TabIndex = 1;
             // 
-            // lblEmail
+            // lblUsername
             // 
-            this.lblEmail.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(59, 95);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(42, 15);
-            this.lblEmail.TabIndex = 4;
-            this.lblEmail.Text = "Email:";
-            // 
-            // lblUserLevel
-            // 
-            this.lblUserLevel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.lblUserLevel.AutoSize = true;
-            this.lblUserLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserLevel.Location = new System.Drawing.Point(59, 122);
-            this.lblUserLevel.Name = "lblUserLevel";
-            this.lblUserLevel.Size = new System.Drawing.Size(68, 15);
-            this.lblUserLevel.TabIndex = 6;
-            this.lblUserLevel.Text = "User Level:";
-            // 
-            // cbUserLevel
-            // 
-            this.cbUserLevel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.cbUserLevel.FormattingEnabled = true;
-            this.cbUserLevel.Location = new System.Drawing.Point(159, 121);
-            this.cbUserLevel.Name = "cbUserLevel";
-            this.cbUserLevel.Size = new System.Drawing.Size(215, 21);
-            this.cbUserLevel.TabIndex = 8;
-            // 
-            // btnSave
-            // 
-            this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnSave.BackColor = System.Drawing.Color.Blue;
-            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(109, 166);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(106, 34);
-            this.btnSave.TabIndex = 9;
-            this.btnSave.Text = "Create";
-            this.btnSave.UseVisualStyleBackColor = false;
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(221, 166);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(106, 34);
-            this.btnCancel.TabIndex = 10;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
+            this.lblUsername.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsername.Location = new System.Drawing.Point(59, 43);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(71, 15);
+            this.lblUsername.TabIndex = 0;
+            this.lblUsername.Text = "Username: ";
             // 
             // CreateEditUser
             // 

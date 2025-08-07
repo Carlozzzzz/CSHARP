@@ -64,8 +64,14 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\Product.cs" />
+    <Compile Include="Model\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\Database.cs" />
+    <Compile Include="Repository\HelperDebug.cs" />
+    <Compile Include="Repository\ProductRepository.cs" />
+    <Compile Include="Repository\UserRepository.cs" />
     <EmbeddedResource Include="CreateEditProduct.resx">
       <DependentUpon>CreateEditProduct.cs</DependentUpon>
     </EmbeddedResource>
@@ -99,8 +105,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Model\" />
-    <Folder Include="Repository\" />
+    <Content Include="Tables.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
