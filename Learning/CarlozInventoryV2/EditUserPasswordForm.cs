@@ -23,30 +23,18 @@ namespace CarlozInventoryV2
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            try
+            if (ValidateForm())
             {
-                if (ValidateForm())
-                {
-                    using (SqlConnection connection = new SqlConnection(Database.GetConnectionString()))
-                    {
-                        string query = @"UPDATE UsersTbl SET password = @Password WHERE id = @Id";
-                        using (SqlCommand command = new SqlCommand(query, connection))
-                        {
-                            connection.Open();
-                            command.Parameters.AddWithValue("@Password", tbRetypePassword.Text);
-                            command.Parameters.AddWithValue("@Id", id);
+                User user = new User();
+                user.id = id;
+                user.password = tbPassword.Text;
 
-                            command.ExecuteNonQuery();
+                var repo = new UserRepository();
+                repo.ChangeUserPassword(user);
 
-                            MessageBox.Show("Password updated succesfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LogRepo.CreateLog("Updated a user password");
 
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Error while updating password: " + ex.Message);
+                this.DialogResult = DialogResult.OK;
             }
         }
 

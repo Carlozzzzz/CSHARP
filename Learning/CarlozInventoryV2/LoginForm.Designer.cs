@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnAutoFill = new System.Windows.Forms.Button();
             this.btnCancelLogin = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
             this.tbPassword = new System.Windows.Forms.TextBox();
@@ -36,7 +37,6 @@
             this.lblLogin = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
             this.lblUsername = new System.Windows.Forms.Label();
-            this.btnAutoFill = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,6 +58,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(362, 247);
             this.panel1.TabIndex = 0;
+            // 
+            // btnAutoFill
+            // 
+            this.btnAutoFill.BackColor = System.Drawing.Color.Chartreuse;
+            this.btnAutoFill.Location = new System.Drawing.Point(3, 216);
+            this.btnAutoFill.Name = "btnAutoFill";
+            this.btnAutoFill.Size = new System.Drawing.Size(87, 28);
+            this.btnAutoFill.TabIndex = 7;
+            this.btnAutoFill.Text = "populate login";
+            this.btnAutoFill.UseVisualStyleBackColor = false;
+            this.btnAutoFill.Visible = false;
+            this.btnAutoFill.Click += new System.EventHandler(this.btnAutoFill_Click);
             // 
             // btnCancelLogin
             // 
@@ -85,6 +97,7 @@
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.Size = new System.Drawing.Size(197, 20);
             this.tbPassword.TabIndex = 4;
+            this.tbPassword.UseSystemPasswordChar = true;
             // 
             // tbUsername
             // 
@@ -120,17 +133,6 @@
             this.lblUsername.Size = new System.Drawing.Size(55, 13);
             this.lblUsername.TabIndex = 0;
             this.lblUsername.Text = "Username";
-            // 
-            // btnAutoFill
-            // 
-            this.btnAutoFill.BackColor = System.Drawing.Color.Chartreuse;
-            this.btnAutoFill.Location = new System.Drawing.Point(3, 216);
-            this.btnAutoFill.Name = "btnAutoFill";
-            this.btnAutoFill.Size = new System.Drawing.Size(87, 28);
-            this.btnAutoFill.TabIndex = 7;
-            this.btnAutoFill.Text = "populate login";
-            this.btnAutoFill.UseVisualStyleBackColor = false;
-            this.btnAutoFill.Click += new System.EventHandler(this.btnAutoFill_Click);
             // 
             // LoginForm
             // 

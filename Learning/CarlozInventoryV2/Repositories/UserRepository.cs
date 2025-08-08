@@ -6,6 +6,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace CarlozInventoryV2.Repositories
 {
@@ -207,9 +208,33 @@ namespace CarlozInventoryV2.Repositories
             }
         }
 
-        public void ChangeUserPassword() // to be modified later
+        public void ChangeUserPassword(User user) // to be modified later
         {
 
+            Console.WriteLine($"ID: {user.id} ~~~ Password: {user.password} ");
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(Database.GetConnectionString()))
+                {
+                    string query = @"UPDATE UsersTbl SET password = @Password WHERE id = @Id";
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        connection.Open();
+                        command.Parameters.AddWithValue("@Password", user.password);
+                        command.Parameters.AddWithValue("@Id", user.id);
+
+                        command.ExecuteNonQuery();
+
+                        MessageBox.Show("Password updated succesfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error while updating password: " + ex.Message);
+            }
         }
     }
 

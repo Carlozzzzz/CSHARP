@@ -85,6 +85,7 @@
             this.tbRetypePassword.Name = "tbRetypePassword";
             this.tbRetypePassword.Size = new System.Drawing.Size(266, 20);
             this.tbRetypePassword.TabIndex = 59;
+            this.tbRetypePassword.UseSystemPasswordChar = true;
             // 
             // lblRetypePassword
             // 
@@ -107,6 +108,7 @@
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.Size = new System.Drawing.Size(266, 20);
             this.tbPassword.TabIndex = 57;
+            this.tbPassword.UseSystemPasswordChar = true;
             // 
             // lblpassword
             // 

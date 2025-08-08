@@ -83,9 +83,11 @@ namespace CarlozInventoryV2
         private void btnLogout_Click(object sender, EventArgs e)
         {
             var loginRepo = new LoginRepository();
+            
+            LogRepo.CreateLog("user logged out");
+
             loginRepo.LogoutUser();
 
-            LogRepo.CreateLog("user logged out");
 
             MessageBox.Show("Logged out successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
