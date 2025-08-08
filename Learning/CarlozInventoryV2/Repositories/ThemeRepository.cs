@@ -99,17 +99,19 @@ namespace CarlozInventoryV2.Repositories
             }
         }
 
-        private void ApplyTheme(Themes theme)
-        {
-            // Recursively apply to all controls
-            //ApplyThemeToControls(this.Controls, theme);
-        }
-
         public void ApplyThemeToControls(Control.ControlCollection controls, Themes theme)
         {
             foreach (Control ctrl in controls)
             {
-                if (ctrl is Panel)
+                if (ctrl is DataGridView grid)
+                {
+                    grid.BackgroundColor = ThemeColors.GetPanelBodyColor(theme);
+                    grid.DefaultCellStyle.BackColor = ThemeColors.GetPanelBodyColor(theme);
+                    grid.DefaultCellStyle.ForeColor = ThemeColors.GetForeColor(theme, grid.DefaultCellStyle.BackColor);
+                    grid.ColumnHeadersDefaultCellStyle.BackColor = ThemeColors.GetPanelHeaderColor(theme);
+                    grid.ColumnHeadersDefaultCellStyle.ForeColor = ThemeColors.GetForeColor(theme, grid.ColumnHeadersDefaultCellStyle.BackColor);
+                }
+                else if (ctrl is Panel)
                 {
                     if (ctrl.Name.IndexOf("Header", StringComparison.OrdinalIgnoreCase) >= 0 && ctrl.Name.IndexOf("Mode", StringComparison.OrdinalIgnoreCase) < 0)
                     {
@@ -124,7 +126,7 @@ namespace CarlozInventoryV2.Repositories
                     }
                     ctrl.ForeColor = ThemeColors.GetForeColor(theme, ctrl.BackColor);
                     Console.WriteLine("Inside Panel : " + ctrl.Name);
-                }
+                } 
                 //else if (ctrl is Button)
                 //{
                 //    ctrl.BackColor = ThemeColors.GetButtonBackColor(theme);

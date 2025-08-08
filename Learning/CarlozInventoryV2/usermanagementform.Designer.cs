@@ -31,12 +31,12 @@
             this.panelBody = new System.Windows.Forms.Panel();
             this.usersGridView = new System.Windows.Forms.DataGridView();
             this.panelHeader = new System.Windows.Forms.Panel();
-            this.tbSearch = new System.Windows.Forms.TextBox();
-            this.cbRoles = new System.Windows.Forms.ComboBox();
-            this.cbStatus = new System.Windows.Forms.ComboBox();
-            this.dtpCreatedAt = new System.Windows.Forms.DateTimePicker();
-            this.btnNewUser = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
+            this.btnNewUser = new System.Windows.Forms.Button();
+            this.dtpCreatedAt = new System.Windows.Forms.DateTimePicker();
+            this.cbStatus = new System.Windows.Forms.ComboBox();
+            this.cbRoles = new System.Windows.Forms.ComboBox();
+            this.tbSearch = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelBody.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.usersGridView)).BeginInit();
@@ -82,48 +82,20 @@
             this.panelHeader.Size = new System.Drawing.Size(776, 47);
             this.panelHeader.TabIndex = 0;
             // 
-            // tbSearch
+            // btnRefresh
             // 
-            this.tbSearch.Location = new System.Drawing.Point(13, 12);
-            this.tbSearch.Name = "tbSearch";
-            this.tbSearch.Size = new System.Drawing.Size(178, 20);
-            this.tbSearch.TabIndex = 0;
-            this.tbSearch.Text = "Search...";
-            this.tbSearch.Click += new System.EventHandler(this.tbSearch_Click);
-            this.tbSearch.TextChanged += new System.EventHandler(this.tbSearch_TextChanged);
-            this.tbSearch.Leave += new System.EventHandler(this.tbSearch_Leave);
-            // 
-            // cbRoles
-            // 
-            this.cbRoles.FormattingEnabled = true;
-            this.cbRoles.Location = new System.Drawing.Point(220, 11);
-            this.cbRoles.Name = "cbRoles";
-            this.cbRoles.Size = new System.Drawing.Size(74, 21);
-            this.cbRoles.TabIndex = 1;
-            this.cbRoles.Text = "--Roles--";
-            this.cbRoles.SelectedIndexChanged += new System.EventHandler(this.cbRoles_SelectedIndexChanged);
-            // 
-            // cbStatus
-            // 
-            this.cbStatus.FormattingEnabled = true;
-            this.cbStatus.Items.AddRange(new object[] {
-            "Active",
-            "Inactive"});
-            this.cbStatus.Location = new System.Drawing.Point(300, 11);
-            this.cbStatus.Name = "cbStatus";
-            this.cbStatus.Size = new System.Drawing.Size(68, 21);
-            this.cbStatus.TabIndex = 2;
-            this.cbStatus.Text = "--Status--";
-            this.cbStatus.SelectedIndexChanged += new System.EventHandler(this.cbStatus_SelectedIndexChanged);
-            // 
-            // dtpCreatedAt
-            // 
-            this.dtpCreatedAt.Location = new System.Drawing.Point(374, 12);
-            this.dtpCreatedAt.Name = "dtpCreatedAt";
-            this.dtpCreatedAt.Size = new System.Drawing.Size(194, 20);
-            this.dtpCreatedAt.TabIndex = 3;
-            this.dtpCreatedAt.Value = new System.DateTime(1990, 1, 1, 0, 0, 0, 0);
-            this.dtpCreatedAt.ValueChanged += new System.EventHandler(this.dtpCreatedAt_ValueChanged);
+            this.btnRefresh.BackColor = System.Drawing.Color.LawnGreen;
+            this.btnRefresh.FlatAppearance.BorderSize = 0;
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnRefresh.Location = new System.Drawing.Point(604, 5);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(77, 33);
+            this.btnRefresh.TabIndex = 4;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // btnNewUser
             // 
@@ -140,20 +112,48 @@
             this.btnNewUser.UseVisualStyleBackColor = false;
             this.btnNewUser.Click += new System.EventHandler(this.btnNewUser_Click);
             // 
-            // btnRefresh
+            // dtpCreatedAt
             // 
-            this.btnRefresh.BackColor = System.Drawing.Color.LawnGreen;
-            this.btnRefresh.FlatAppearance.BorderSize = 0;
-            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefresh.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnRefresh.Location = new System.Drawing.Point(604, 5);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(77, 33);
-            this.btnRefresh.TabIndex = 4;
-            this.btnRefresh.Text = "Refresh";
-            this.btnRefresh.UseVisualStyleBackColor = false;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            this.dtpCreatedAt.Location = new System.Drawing.Point(374, 12);
+            this.dtpCreatedAt.Name = "dtpCreatedAt";
+            this.dtpCreatedAt.Size = new System.Drawing.Size(194, 20);
+            this.dtpCreatedAt.TabIndex = 3;
+            this.dtpCreatedAt.Value = new System.DateTime(1990, 1, 1, 0, 0, 0, 0);
+            this.dtpCreatedAt.ValueChanged += new System.EventHandler(this.dtpCreatedAt_ValueChanged);
+            // 
+            // cbStatus
+            // 
+            this.cbStatus.FormattingEnabled = true;
+            this.cbStatus.Items.AddRange(new object[] {
+            "Active",
+            "Inactive"});
+            this.cbStatus.Location = new System.Drawing.Point(300, 11);
+            this.cbStatus.Name = "cbStatus";
+            this.cbStatus.Size = new System.Drawing.Size(68, 21);
+            this.cbStatus.TabIndex = 2;
+            this.cbStatus.Text = "--Status--";
+            this.cbStatus.SelectedIndexChanged += new System.EventHandler(this.cbStatus_SelectedIndexChanged);
+            // 
+            // cbRoles
+            // 
+            this.cbRoles.FormattingEnabled = true;
+            this.cbRoles.Location = new System.Drawing.Point(220, 11);
+            this.cbRoles.Name = "cbRoles";
+            this.cbRoles.Size = new System.Drawing.Size(74, 21);
+            this.cbRoles.TabIndex = 1;
+            this.cbRoles.Text = "--Roles--";
+            this.cbRoles.SelectedIndexChanged += new System.EventHandler(this.cbRoles_SelectedIndexChanged);
+            // 
+            // tbSearch
+            // 
+            this.tbSearch.Location = new System.Drawing.Point(13, 12);
+            this.tbSearch.Name = "tbSearch";
+            this.tbSearch.Size = new System.Drawing.Size(178, 20);
+            this.tbSearch.TabIndex = 0;
+            this.tbSearch.Text = "Search...";
+            this.tbSearch.Click += new System.EventHandler(this.tbSearch_Click);
+            this.tbSearch.TextChanged += new System.EventHandler(this.tbSearch_TextChanged);
+            this.tbSearch.Leave += new System.EventHandler(this.tbSearch_Leave);
             // 
             // panel1
             // 

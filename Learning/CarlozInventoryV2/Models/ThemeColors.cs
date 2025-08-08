@@ -37,11 +37,18 @@ namespace CarlozInventoryV2.Models
             }
         }
 
+        //public static Color GetForeColor(Themes theme, Color backColor)
+        //{
+        //    // If the background is dark, use white; otherwise, use black
+        //    int brightness = (backColor.R + backColor.G + backColor.B) / 3;
+        //    return brightness < 128 ? Color.White : Color.Black;
+        //}
+
         public static Color GetForeColor(Themes theme, Color backColor)
         {
-            // If the background is dark, use white; otherwise, use black
-            int brightness = (backColor.R + backColor.G + backColor.B) / 3;
-            return brightness < 128 ? Color.White : Color.Black;
+            // Use luminance for better contrast detection
+            double luminance = (0.299 * backColor.R + 0.587 * backColor.G + 0.114 * backColor.B);
+            return luminance < 140 ? Color.White : Color.Black;
         }
     }
 }
