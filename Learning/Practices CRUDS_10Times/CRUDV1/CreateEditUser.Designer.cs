@@ -115,6 +115,7 @@
             // cbUserLevel
             // 
             this.cbUserLevel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.cbUserLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbUserLevel.FormattingEnabled = true;
             this.cbUserLevel.Items.AddRange(new object[] {
             "Admin",

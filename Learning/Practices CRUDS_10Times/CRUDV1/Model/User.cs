@@ -12,6 +12,7 @@ namespace CRUDV1.Model
         private string username;
         private string password;
         private string email;
+        private string userlevel;
         private int user_level;
         private DateTime created_at;
         private DateTime modified_at;
@@ -23,5 +24,6 @@ namespace CRUDV1.Model
         public int User_level { get => user_level; set => user_level = value; }
         public DateTime Created_at { get => created_at; set => created_at = value; }
         public DateTime Modified_at { get => modified_at; set => modified_at = value; }
+        public string Userlevel { get => userlevel; set => userlevel = value; }
     }
 }

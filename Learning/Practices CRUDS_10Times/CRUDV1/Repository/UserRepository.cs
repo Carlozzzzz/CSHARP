@@ -33,6 +33,7 @@ namespace CRUDV1.Repository
                                 user.Password = reader.GetString(2);
                                 user.Email = reader.GetString(3);
                                 user.User_level = reader.GetInt32(4);
+                                user.Userlevel = reader.GetInt32(4) == 0 ? "Admin" : "User";
                                 user.Created_at = reader.GetDateTime(5);
                                 user.Modified_at = reader.GetDateTime(6);
 
@@ -96,15 +97,16 @@ namespace CRUDV1.Repository
                 using (SqlConnection connection = new SqlConnection(Database.GetConnectionString()))
                 {
                     connection.Open();
-                    string query = "INSERT INTO Users_Tbl (username, password, email, user_level, created_at)" +
-                        "VALUES (@Username, @Password, @Email, @User_Level, @Created_at)";
+                    string query = "INSERT INTO Users_Tbl (username, password, email, user_level, created_at, modified_at)" +
+                        "VALUES (@Username, @Password, @Email, @User_Level, @Created_at, @Modified_at)";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@Username", user.Username);
-                        command.Parameters.AddWithValue("@Password", user.Username);
-                        command.Parameters.AddWithValue("@Email", user.Username);
+                        command.Parameters.AddWithValue("@Password", user.Password);
+                        command.Parameters.AddWithValue("@Email", user.Email);
                         command.Parameters.AddWithValue("@User_Level", user.User_level);
                         command.Parameters.AddWithValue("@Created_at", user.Created_at);
+                        command.Parameters.AddWithValue("@Modified_at", user.Modified_at);
 
                         command.ExecuteNonQuery();
                         return true;
@@ -127,14 +129,14 @@ namespace CRUDV1.Repository
                 using (SqlConnection connection = new SqlConnection(Database.GetConnectionString()))
                 {
                     connection.Open();
-                    string query = "" +
+                    string query =
                         "UPDATE Users_Tbl " +
                         "SET username = @Username, " +
                         "   password = @Password, " +
                         "   email = @Email, " +
                         "   user_level = @User_Level, " +
                         "   modified_at = @Modified_at " +
-                        "WHERE id = @Id)";
+                        "WHERE id = @Id";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@Id", user.Id);
@@ -157,9 +159,27 @@ namespace CRUDV1.Repository
         }
 
         
-        internal void DeleteUser(int userId)
+        internal bool DeleteUser(int userId)
         {
-            throw new NotImplementedException();
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(Database.GetConnectionString()))
+                {
+                    connection.Open();
+                    string query = "DELETE FROM Users_Tbl where id=@Id";
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@Id", userId);
+                        command.ExecuteNonQuery();
+                        return true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error deleting user: " + ex.Message, "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
         }
     }
 }
