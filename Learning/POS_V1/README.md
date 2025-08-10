@@ -79,3 +79,65 @@ The app will follow a **layered architecture** for easy maintenance and scalabil
   - Use **ClosedXML** or **EPPlus** library for reading and writing Excel files
   - Allow importing product lists from Excel
   - Allow exporting sales reports to Excel
+
+
+
+
+## 🛠️ Development Order – POS System
+
+This is the recommended build sequence for the POS system to ensure scalability and stability.
+
+---
+
+### 🔹 Phase 1 — Foundation (Setup & Core Logic)
+1. ⬜ **📂 Database Setup**  
+   - Create tables for `Products`, `Sales`, `Users`, and `SaleDetails` (line items)  
+   - Decide on SQLite (local) or SQL Server (scalable)
+2. ⬜ **🔑 User Login System**  
+   - Role-based (Admin, Cashier) so permissions are enforced from the start
+3. ⬜ **📦 Product Management Module**  
+   - Add, edit, delete products  
+   - Store barcode, name, price, stock quantity
+4. ⬜ **📡 Barcode Scanner Input Handling**  
+   - TextBox + event handler to process scanned codes
+
+---
+
+### 🔹 Phase 2 — Sales & Checkout
+5. ⬜ **🛒 Sales Cart System**  
+   - Add/remove products from cart  
+   - Quantity adjustment  
+   - Auto-price calculation
+6. ⬜ **💵 Payment Processing (Basic)**  
+   - Cash payments first  
+   - Calculate change  
+   - Save transaction in DB
+7. ⬜ **🖨️ Receipt Printing (Basic)**  
+   - Simple text-based printout or thermal printer integration
+
+---
+
+### 🔹 Phase 3 — Reporting & Export
+8. ⬜ **📊 Basic Daily Sales Report**  
+   - Total sales for the day  
+   - Filter by date
+9. ⬜ **📄 Excel Export for Sales**  
+   - Use ClosedXML or EPPlus to generate `.xlsx`
+
+---
+
+### 🔹 Phase 4 — Inventory & Stock Control
+10. ⬜ **📉 Stock Quantity Updates After Sale**  
+    - Reduce stock automatically  
+    - Block sale if out of stock
+11. ⬜ **⚠️ Low Stock Alerts**  
+    - Show warning in product list
+
+---
+
+### 🔹 Phase 5 — Extra Features (Future Scaling)
+12. ⬜ **💳 Multiple Payment Methods** (card, mixed)  
+13. ⬜ **🏷️ Discounts & Promotions**  
+14. ⬜ **🧍 Customer Management**  
+15. ⬜ **📈 Advanced Reporting with Filters**  
+16. ⬜ **🏬 Multi-Branch Support (Cloud DB)**
