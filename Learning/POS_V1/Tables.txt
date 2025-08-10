@@ -1,0 +1,187 @@
+﻿Users
+-----
+user_id         PK
+username        UNIQUE
+password_hash
+full_name
+role            (admin, cashier, manager)
+email
+phone
+is_active       BOOLEAN
+is_deleted		BOOLEAN
+deleted_by		(user_id)
+deleted_at
+created_at
+updated_at
+===================================================================================================
+Holds all system account information for staff members like admins, managers, and cashiers.
+Purpose: Controls who can log in and their permissions via the role column.
+Key Link: Referenced by other tables like Products (created_by, updated_by), Sales (who processed a sale), PurchaseOrders (who created the order), and AuditLog (who made changes).
+===================================================================================================
+
+
+Products
+--------
+product_id      PK
+barcode         UNIQUE NULLABLE
+name
+description
+category_id     FK → Categories.category_id
+supplier_id     FK → Suppliers.supplier_id
+price
+cost_price
+stock_quantity
+reorder_level
+is_active       BOOLEAN
+created_by      FK → Users.user_id
+updated_by      FK → Users.user_id
+is_deleted		BOOLEAN
+deleted_by		(user_id)
+deleted_at
+created_at
+updated_at
+===================================================================================================
+Contains detailed information about every item you sell.
+Purpose: Central to inventory tracking — stores name, price, quantity, and links to category and supplier.
+Key Link:
+Linked to Categories (organization)
+Linked to Suppliers (where it comes from)
+Linked to SaleItems (what was sold) and PurchaseOrderItems (what was bought from suppliers).
+===================================================================================================
+
+
+Categories
+----------
+category_id     PK
+name
+description
+created_at
+updated_at
+===================================================================================================
+Groups products into types for easier browsing, reports, and filtering.
+Purpose: Avoids repetitive category names in Products by giving each a category_id.
+Key Link: One category can be linked to many products.
+===================================================================================================
+
+
+Suppliers
+---------
+supplier_id     PK
+name
+contact_person
+phone
+email
+address
+is_deleted		BOOLEAN
+deleted_by		(user_id)
+deleted_at
+created_at
+updated_at
+===================================================================================================
+Holds details about vendors that supply the products.
+Purpose: Allows tracking of where stock comes from.
+Key Link:
+Linked to Products (primary supplier)
+Linked to PurchaseOrders (who you buy from).
+===================================================================================================
+
+
+Customers
+---------
+customer_id     PK
+full_name
+phone
+email
+address
+is_deleted		BOOLEAN
+deleted_by		(user_id)
+deleted_at
+created_at
+updated_at
+===================================================================================================
+Keeps basic information about customers for receipts, loyalty points, or targeted promotions.
+Purpose: Useful if you want to track purchase history or run loyalty programs.
+Key Link: Linked to Sales when recording who bought the items.
+===================================================================================================
+
+
+Sales
+-----
+sale_id         PK
+sale_date
+customer_id     FK → Customers.customer_id NULLABLE
+user_id         FK → Users.user_id  (cashier)
+total_amount
+payment_method  (cash, card, e-wallet)
+amount_paid
+change_given
+created_at
+===================================================================================================
+Represents one sales transaction (a full receipt).
+Purpose: Acts as a "header" record for a sale, containing date, cashier, customer (optional), and payment details.
+Key Link: Connected to multiple SaleItems that detail what was sold.
+===================================================================================================
+
+
+SaleItems
+---------
+sale_item_id    PK
+sale_id         FK → Sales.sale_id
+product_id      FK → Products.product_id
+quantity
+price
+total
+===================================================================================================
+Stores the specific products and quantities sold in each sale.
+Purpose: Breaks down a Sale into line items (e.g., 2× Coke, 1× Bread).
+Key Link: Linked to Sales (which transaction it belongs to) and Products (what was sold).
+===================================================================================================
+
+
+PurchaseOrders
+--------------
+po_id           PK
+supplier_id     FK → Suppliers.supplier_id
+user_id         FK → Users.user_id (who created order)
+order_date
+status          (pending, received, cancelled)
+total_cost
+created_at
+updated_at
+===================================================================================================
+Represents one supplier order for restocking products.
+Purpose: Acts as a "header" record for a purchase, storing supplier, date, creator, and status.
+Key Link: Connected to multiple PurchaseOrderItems for detailed items ordered.
+===================================================================================================
+
+
+PurchaseOrderItems
+------------------
+po_item_id      PK
+po_id           FK → PurchaseOrders.po_id
+product_id      FK → Products.product_id
+quantity
+cost_price
+total_cost
+===================================================================================================
+Stores the products and quantities requested in each purchase order.
+Purpose: Breaks down a PurchaseOrder into specific products and costs.
+Key Link: Linked to PurchaseOrders (which order it belongs to) and Products (what was ordered).
+===================================================================================================
+
+
+AuditLog
+--------
+log_id          PK
+table_name
+record_id
+action          (CREATE, UPDATE, DELETE)
+changed_by      FK → Users.user_id
+changed_at
+old_value       TEXT
+new_value       TEXT
+===================================================================================================
+Tracks all important changes in the system for accountability and troubleshooting.
+Purpose: Keeps a record of who changed what and when, with old and new values.
+Key Link: Linked to Users to know who made the change.
+===================================================================================================
