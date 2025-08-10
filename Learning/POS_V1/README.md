@@ -1,65 +1,65 @@
-# Point of Sale (POS) System � Feature Plan
+﻿# 💻 Point of Sale (POS) System – Feature Plan
 
-## Overview
+## 📌 Overview
 A scalable **Point of Sale** system built in **C# Windows Forms**, with barcode scanner support and Excel integration.  
 The system is designed with a **modular architecture** to make adding new features easier.
 
 ---
 
-## 1. Core MVP Features
+## 🛒 1. Core MVP Features
 These features form the base of the POS system.
 
-### 1.1 Sales & Checkout
-- [x] Scan products using a barcode scanner (auto-add to cart)
-- [x] Manual product search (by name or code)
-- [x] Cart management (add/remove products, adjust quantity)
-- [x] Automatic price calculation (subtotal, tax, discounts, total)
-- [x] Multiple payment methods (cash, card, mixed)
-- [x] Receipt printing (thermal printer support)
+### 💳 1.1 Sales & Checkout
+- ✅ Scan products using a barcode scanner (auto-add to cart)
+- ✅ Manual product search (by name or code)
+- ✅ Cart management (add/remove products, adjust quantity)
+- ✅ Automatic price calculation (subtotal, tax, discounts, total)
+- ✅ Multiple payment methods (cash, card, mixed)
+- ✅ Receipt printing (thermal printer support)
 
-### 1.2 Product Management
-- [x] Add, edit, and delete products
-- [x] Assign barcode, product name, price, and category
-- [x] Track stock quantity
+### 📦 1.2 Product Management
+- ✅ Add, edit, and delete products
+- ✅ Assign barcode, product name, price, and category
+- ✅ Track stock quantity
 
-### 1.3 User Management
-- [x] Login system with role-based access (Admin, Cashier)
-- [x] Permissions based on role (e.g., cashiers cannot delete products)
+### 👤 1.3 User Management
+- ✅ Login system with role-based access (Admin, Cashier)
+- ✅ Permissions based on role (e.g., cashiers cannot delete products)
 
-### 1.4 Basic Reporting
-- [x] Daily sales summary
-- [x] Export sales to Excel
+### 📊 1.4 Basic Reporting
+- ✅ Daily sales summary
+- ✅ Export sales to Excel
 
 ---
 
-## 2. Planned Future Features
+## 🚀 2. Planned Future Features
 Additional features that can be added without changing the core app.
 
-### 2.1 Inventory & Stock Control
-- [ ] Low-stock alerts
-- [ ] Stock adjustments (damaged, returned, etc.)
-- [ ] Import/export product lists from Excel
+### 📦 2.1 Inventory & Stock Control
+- ⬜ Low-stock alerts
+- ⬜ Stock adjustments (damaged, returned, etc.)
+- ⬜ Import/export product lists from Excel
 
-### 2.2 Discounts & Promotions
-- [ ] Percentage or fixed-amount discounts
-- [ ] Time-based promotions (e.g., happy hour, holiday sales)
+### 🎯 2.2 Discounts & Promotions
+- ⬜ Percentage or fixed-amount discounts
+- ⬜ Time-based promotions (e.g., happy hour, holiday sales)
 
-### 2.3 Advanced Reporting
-- [ ] Filter sales by date, cashier, or product
-- [ ] Graphical sales trends
-- [ ] Export to PDF and Excel
+### 📈 2.3 Advanced Reporting
+- ⬜ Filter sales by date, cashier, or product
+- ⬜ Graphical sales trends
+- ⬜ Export to PDF and Excel
 
-### 2.4 Customer Management
-- [ ] Store customer details
-- [ ] Loyalty points or reward system
+### 🧍 2.4 Customer Management
+- ⬜ Store customer details
+- ⬜ Loyalty points or reward system
 
-### 2.5 Multi-Branch Support
-- [ ] Centralized database for multiple store branches
-- [ ] Synchronization of stock and sales data
+### 🏬 2.5 Multi-Branch Support
+- ⬜ Centralized database for multiple store branches
+- ⬜ Synchronization of stock and sales data
 
 ---
 
-## 3. Scalability & Architecture
+## 🏗️ 3. Scalability & Architecture
 The app will follow a **layered architecture** for easy maintenance and scalability:
 
 - **UI Layer:** Windows Forms for display  
@@ -73,7 +73,7 @@ The app will follow a **layered architecture** for easy maintenance and scalabil
 
 ---
 
-## 4. Barcode Scanner & Excel Integration
+## 📡 4. Barcode Scanner & Excel Integration
 - **Barcode Scanner:** Works as a keyboard input; the scanned code is entered into a TextBox and processed when `Enter` is detected.
 - **Excel Integration:**  
   - Use **ClosedXML** or **EPPlus** library for reading and writing Excel files
