@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace MVP_V1.Views
 {
-    public partial class MainView : Form
+    public partial class MainView : Form, IMainView
     {
         public MainView()
         {
             InitializeComponent();
+            btnPet.Click += delegate { ShowPetView?.Invoke(this, EventArgs.Empty); };
         }
+
+        public event EventHandler ShowPetView;
+        public event EventHandler ShowOwnerView;
+        public event EventHandler ShowVetsView;
     }
 }

@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
+using MVP_V1.Views;
+using MVP_V1.Presenters;
 
 namespace MVP_V1
 {
@@ -16,7 +19,12 @@ namespace MVP_V1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+
+            string sqlConnectionString = ConfigurationManager.ConnectionStrings["SqlConnection"].ConnectionString;
+            IMainView view = new MainView();
+            new MainPresenter(view, sqlConnectionString);
+
+            Application.Run((Form)view);
         }
     }
 }

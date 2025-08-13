@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace MVP_V1._Repositories
 {
-    internal class BaseRepository
+    public abstract class BaseRepository
     {
+        protected string connectionString;
     }
 }

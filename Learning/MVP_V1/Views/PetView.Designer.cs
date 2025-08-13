@@ -40,7 +40,6 @@
             this.btnAddPet = new System.Windows.Forms.Button();
             this.petListGridView = new System.Windows.Forms.DataGridView();
             this.tpPetDetail = new System.Windows.Forms.TabPage();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panelPetDetails = new System.Windows.Forms.Panel();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
@@ -52,18 +51,21 @@
             this.label3 = new System.Windows.Forms.Label();
             this.tbPetId = new System.Windows.Forms.TextBox();
             this.lblPetId = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnClose = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tcPet.SuspendLayout();
             this.tpPetList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.petListGridView)).BeginInit();
             this.tpPetDetail.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panelPetDetails.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.panel1.Controls.Add(this.btnClose);
             this.panel1.Controls.Add(this.lblPet);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -189,16 +191,6 @@
             this.tpPetDetail.Text = "Pet Details";
             this.tpPetDetail.UseVisualStyleBackColor = true;
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.tcPet);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 49);
-            this.panel2.Name = "panel2";
-            this.panel2.Padding = new System.Windows.Forms.Padding(15);
-            this.panel2.Size = new System.Drawing.Size(958, 455);
-            this.panel2.TabIndex = 3;
-            // 
             // panelPetDetails
             // 
             this.panelPetDetails.Controls.Add(this.btnCancel);
@@ -305,6 +297,26 @@
             this.lblPetId.TabIndex = 20;
             this.lblPetId.Text = "Pet ID:";
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.tcPet);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 49);
+            this.panel2.Name = "panel2";
+            this.panel2.Padding = new System.Windows.Forms.Padding(15);
+            this.panel2.Size = new System.Drawing.Size(958, 455);
+            this.panel2.TabIndex = 3;
+            // 
+            // btnClose
+            // 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.Location = new System.Drawing.Point(904, 7);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(35, 35);
+            this.btnClose.TabIndex = 5;
+            this.btnClose.Text = "X";
+            this.btnClose.UseVisualStyleBackColor = true;
+            // 
             // PetView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -321,9 +333,9 @@
             this.tpPetList.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.petListGridView)).EndInit();
             this.tpPetDetail.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
             this.panelPetDetails.ResumeLayout(false);
             this.panelPetDetails.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -354,5 +366,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tbPetId;
         private System.Windows.Forms.Label lblPetId;
+        private System.Windows.Forms.Button btnClose;
     }
 }
