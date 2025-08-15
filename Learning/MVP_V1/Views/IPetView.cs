@@ -10,7 +10,7 @@ namespace MVP_V1.Views
     public interface IPetView
     {
         // Properties
-        string Petid { get; set; }
+        string PetId { get; set; }
         string PetName { get; set; }
         string PetType { get; set; }
         string PetColour { get; set; }

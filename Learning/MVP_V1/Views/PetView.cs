@@ -34,9 +34,63 @@ namespace MVP_V1.Views
                 {
                     if (e.KeyCode == Keys.Enter) SearchEvent?.Invoke(this, EventArgs.Empty);
                 };
+
+            // Add
+            btnAddPet.Click += delegate {
+                    AddNewEvent?.Invoke(this, EventArgs.Empty);
+                    Console.WriteLine("AddNewEvent is invoked.");
+                    tcPet.TabPages.Remove(tpPetList);
+                    tcPet.TabPages.Add(tpPetDetail);
+                    Console.WriteLine("IsEdit: "+IsEdit);
+                };
+
+            // Edit
+            btnEditPet.Click += delegate {
+                    EditEvent?.Invoke(this, EventArgs.Empty);
+                    Console.WriteLine("EditEvent is invoked.");
+                    tcPet.TabPages.Remove(tpPetList);
+                    tcPet.TabPages.Add(tpPetDetail);
+                    Console.WriteLine("IsEdit: " + IsEdit);
+                };
+
+            // Save 
+            btnSave.Click += delegate {
+                    SaveEvent?.Invoke(this, EventArgs.Empty);
+                    Console.WriteLine("SaveEvent is invoked.");
+                    if (IsSuccessful)
+                    {
+                        tcPet.TabPages.Remove(tpPetDetail);
+                        tcPet.TabPages.Add(tpPetList);
+
+                    }
+                    MessageBox.Show(Message);
+
+                };
+
+            // Delete
+            btnDeletePet.Click += delegate
+            {
+                var result = MessageBox.Show("Are you sure you want to delete the selected pet?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    DeleteEvent?.Invoke(this, EventArgs.Empty);
+                    MessageBox.Show(Message);
+                }
+            };
+
+            // Cancel
+            btnCancel.Click += delegate
+            {
+                CancelEvent?.Invoke(this, EventArgs.Empty);
+                tcPet.TabPages.Add(tpPetList);
+                tcPet.TabPages.Remove(tpPetDetail);
+
+            };
+
+
         }
 
-        public string Petid { 
+        public string PetId { 
             get => tbPetId.Text;
             set => tbPetId.Text = value;
         }

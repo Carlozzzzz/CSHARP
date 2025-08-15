@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -18,17 +19,50 @@ namespace MVP_V1._Repositories
 
         public void Add(PetModel petModel)
         {
-            throw new NotImplementedException();
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlCommand command = new SqlCommand())
+            {
+                connection.Open();
+                command.Connection = connection;
+                command.CommandText = "INSERT INTO Pet VALUES (@name, @type, @colour)";
+                command.Parameters.Add("@name", SqlDbType.NVarChar).Value = petModel.Name;
+                command.Parameters.Add("@type", SqlDbType.NVarChar).Value = petModel.Type;
+                command.Parameters.Add("@colour", SqlDbType.NVarChar).Value = petModel.Colour;
+                command.ExecuteNonQuery();
+                
+            }
+
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlCommand command = new SqlCommand())
+            {
+                connection.Open();
+                command.Connection = connection;
+                command.CommandText = "DELETE Pet WHERE Pet_Id=@id";
+                command.Parameters.Add("@id", SqlDbType.NVarChar).Value = id;
+                command.ExecuteNonQuery();
+            }
         }
 
         public void Edit(PetModel petModel)
         {
-            throw new NotImplementedException();
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlCommand command = new SqlCommand())
+            {
+                connection.Open();
+                command.Connection = connection;
+                command.CommandText =   "UPDATE Pet " +
+                                        "SET Pet_Name=@name, Pet_Type=@type, Pet_Colour=@colour " +
+                                        "WHERE Pet_Id=@id";
+                command.Parameters.Add("@name", SqlDbType.NVarChar).Value = petModel.Name;
+                command.Parameters.Add("@type", SqlDbType.NVarChar).Value = petModel.Type;
+                command.Parameters.Add("@colour", SqlDbType.NVarChar).Value = petModel.Colour;
+                command.Parameters.Add("@id", SqlDbType.NVarChar).Value = petModel.Id;
+                command.ExecuteNonQuery();
+            }
         }
 
         public IEnumerable<PetModel> GetAll()
