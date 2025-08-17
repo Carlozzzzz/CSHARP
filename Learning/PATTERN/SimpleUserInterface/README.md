@@ -9,62 +9,33 @@
 
 -- Simple Diagram generated with AI
 
-+----------------------+
-|      Program.cs      |
-|  - Entry point       |
-|  - Reads config      |
-|  - Creates MainView  |
-|  - Creates MainPresenter
-+----------------------+
-            |
-            v
-+---------------------------+       implements        +----------------------+
-|        MainView           | <---------------------> |      IMainView       |
-| (Windows Form, UI)        |                        | - event ShowPetView   |
-| - btnPet.Click → raises   |                        | - event ShowOwnerView |
-|   ShowPetView             |                        | - event ShowVetsView  |
-+---------------------------+                        +----------------------+
-            |                                                      
- raises event |                                                      
-            v                                                       
-+---------------------------+                                       
-|      MainPresenter        |                                       
-| - ctor(IMainView, connStr)|                                       
-| - subscribes to ShowPetView                                       
-| - creates PetView & PetPresenter                                  
-+---------------------------+                                       
-            | creates                                           
-            v                                                      
-+---------------------------+        implements       +----------------------+
-|         PetView           | <---------------------> |      IPetView        |
-| (UI Form for pets)        |                        | - PetId, PetName,... |
-| - Raises SearchEvent, etc.|                        | - events: Add, Edit, |
-| - Displays Pet list grid  |                        |   Delete, Save, ...  |
-+---------------------------+                        +----------------------+
-            |                                                      
- raises events |                                                      
-            v                                                       
-+---------------------------+                                       
-|       PetPresenter        |                                       
-| - ctor(IPetView, IPetRepo)|                                       
-| - Handles events from view|                                       
-| - Calls PetRepository     |                                       
-| - Updates BindingSource   |                                       
-+---------------------------+                                       
-            |                                                       
- calls repository |                                                       
-            v                                                       
-+---------------------------+        implements       +----------------------+
-|     PetRepository         | <---------------------> |   IPetRepository    |
-| - Add, Edit, Delete, Get  |                        | (CRUD definitions)   |
-| - Talks to SQL DB         |                        |                      |
-+---------------------------+                        +----------------------+
-            |
-            v
-+---------------------------+
-|         Database          |
-|  (SQL Server, Pet table)  |
-+---------------------------+
+flowchart TD
+
+    %% Program Entry
+    A[Program.cs] -->|creates| B[MainView : Form]
+    A -->|creates| C[MainPresenter]
+
+    %% MainView & Interface
+    B --- IMain[<<interface>> IMainView]
+    IMain -->|implemented by| B
+    B -->|raises event ShowPetView| C
+
+    %% MainPresenter
+    C -->|creates| D[PetView : Form]
+    C -->|creates| E[PetPresenter]
+
+    %% PetView & Interface
+    D --- IPet[<<interface>> IPetView]
+    IPet -->|implemented by| D
+    D -->|raises CRUD events| E
+
+    %% PetPresenter & Repo
+    E --- IRepo[<<interface>> IPetRepository]
+    IRepo -->|implemented by| F[PetRepository]
+
+    %% Repository & DB
+    F --> G[(SQL Database : Pet table)]
+
 
 
 🔑 Breakdown with Interfaces
