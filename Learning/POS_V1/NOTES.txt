@@ -1,4 +1,0 @@
-UserRole Enum (admin, cashier, manager)
-ProductUnit Enum (pcs, bottle, kg, pack)
-
-AuditLog_Tbl *** user_action (either tbl | enum)
